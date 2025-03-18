@@ -8,4 +8,4 @@ Tugas: Pemrograman Web 2
 Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua
 link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
 # 1. Cek Koneksi Terhubung: 
-<img src="/file/image/koneksi.png" img>
+<img src="/IMAGE/gambar1.png" img>

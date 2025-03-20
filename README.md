@@ -59,9 +59,20 @@ seperti berikut.
 </html>
 
 ```
-<img src="/IMAGE/about.png" img>
+<img src="/IMAGE/membuatview.png" img>
+
+# 10. Ubah Method About
+Ubah method about pada class Controller Page menjadi seperti berikut: 
+<img src="/IMAGE/methodabout.png" img>
+
+# 11. Tampilan Halaman
+<img src="/IMAGE/tampilanabout.png" img>
+
+# 12. Membuat Layout Web dengan CSS 
+Buat file style.css pada direktori public. Pada praktikum lab4_layout CSS sudah pernah dibuat, copy saja filenya ke direktori public.
+<img src="/IMAGE/12.png" img>
 
 
 
-# 10. Tampilan Autoroute
+
 

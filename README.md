@@ -1,4 +1,4 @@
-# PRAKTIKUM 1 - 3 PEMWEB2
+![image](https://github.com/user-attachments/assets/d92226eb-25d7-4cb5-9840-cd6944e6a218)# PRAKTIKUM 1 - 3 PEMWEB2
 ```
 Nama : Pranaja widyadhana Wardana
 Nim  : 312310194
@@ -9,3 +9,59 @@ Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga
 link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
 # 1. Install codeigniter, link: https://codeigniter.com/download
 <img src="/IMAGE/gambar1.png" img>
+
+# 2. Menjalankan CLI
+<img src="/IMAGE/picture2.png" img>
+
+# 3. Mengaktifkan Mode Debugging
+<img src="/IMAGE/debug.png" img>
+Jika Error Tampilannya Akan Seperti Berikut:
+<img src="/IMAGE/error.png" img>
+
+# 4. Routing dan Controller
+<img src="/IMAGE/routebaru.png" img>
+<img src="/IMAGE/routebaru1.png" img>
+```
+Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak
+ada. Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang
+sesuai dengan routing yang dibuat yaitu Controller Page.
+```
+
+# 5. Membuat Controller
+<img src="/IMAGE/controller1.png" img>
+<img src="/IMAGE/controller2.png" img>
+
+# 6. Penambahan Auto Routing
+<img src="/IMAGE/autoroute.png" img>
+
+# 7. Penambahan Method Baru
+<img src="/IMAGE/methodbaru.png" img>
+
+# 8. Tampilan Autoroute
+<img src="/IMAGE/tampilanautoroute.png" img>
+
+# 9. Membuat View
+Buat file baru 
+dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya 
+seperti berikut. 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title><?= $title; ?></title>
+</head>
+<body>
+   <h1><?= $title; ?></h1>
+   <hr>
+   <p><?= $content; ?></p>
+</body>
+</html>
+
+```
+<img src="/IMAGE/about.png" img>
+
+
+
+# 10. Tampilan Autoroute
+

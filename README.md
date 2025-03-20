@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d92226eb-25d7-4cb5-9840-cd6944e6a218)# PRAKTIKUM 1 - 3 PEMWEB2
+# PRAKTIKUM 1 - 3 PEMWEB2
 ```
 Nama : Pranaja widyadhana Wardana
 Nim  : 312310194

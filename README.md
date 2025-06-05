@@ -1,24 +1,45 @@
-# PRAKTIKUM 1 - 3 PEMWEB2
-```
+# Praktikum 1-9 Pemrograman Web 2
+
+```bash
 Nama : Pranaja widyadhana Wardana
 Nim  : 312310194
 Kelas: TI.23.A2
 Tugas: Pemrograman Web 2
 ```
-Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua
-link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
-# 1. Install codeigniter, link: https://codeigniter.com/download
+
+---
+
+# Daftar Praktikum
+
+*   **[Praktikum 1](#praktikum-1)**
+*   **[Praktikum 2](#praktikum-2)**
+*   **[Praktikum 3](#praktikum-3)**
+*   **[Praktikum 4](#praktikum-4)**
+*   **[Praktikum 5](#praktikum-5)**
+*   **[Praktikum 6](#praktikum-6)**
+*   **[Praktikum 7](#praktikum-7)**
+*   **[Praktikum 8](#praktikum-8)**
+*   **[Praktikum 9](#praktikum-9)**
+
+---
+
+# Praktikum 1
+
+# 1.1 Install codeigniter
+
+Link download: https://codeigniter.com/download
+
 <img src="/IMAGE/gambar1.png" img>
 
-# 2. Menjalankan CLI
+# 1.2 Menjalankan CLI
 <img src="/IMAGE/picture2.png" img>
 
-# 3. Mengaktifkan Mode Debugging
+# 1.3 Mengaktifkan Mode Debugging
 <img src="/IMAGE/debug.png" img>
 Jika Error Tampilannya Akan Seperti Berikut:
 <img src="/IMAGE/error.png" img>
 
-# 4. Routing dan Controller
+# 1.4 Routing dan Controller
 <img src="/IMAGE/routebaru.png" img>
 <img src="/IMAGE/routebaru1.png" img>
 ```
@@ -27,20 +48,20 @@ ada. Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Contro
 sesuai dengan routing yang dibuat yaitu Controller Page.
 ```
 
-# 5. Membuat Controller
+# 1.5 Membuat Controller
 <img src="/IMAGE/controller1.png" img>
 <img src="/IMAGE/controller2.png" img>
 
-# 6. Penambahan Auto Routing
+# 1.6 Penambahan Auto Routing
 <img src="/IMAGE/autoroute.png" img>
 
-# 7. Penambahan Method Baru
+# 1.7 Penambahan Method Baru
 <img src="/IMAGE/methodbaru.png" img>
 
-# 8. Tampilan Autoroute
+# 1.8 Tampilan Autoroute
 <img src="/IMAGE/tampilanautoroute.png" img>
 
-# 9. Membuat View
+# 1.9 Membuat View
 Buat file baru 
 dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya 
 seperti berikut. 
@@ -61,16 +82,18 @@ seperti berikut.
 ```
 <img src="/IMAGE/membuatview.png" img>
 
-# 10. Ubah Method About
+# 1.10 Ubah Method About
 Ubah method about pada class Controller Page menjadi seperti berikut: 
 <img src="/IMAGE/methodabout.png" img>
 
-# 11. Tampilan Halaman
+# 1.11 Tampilan Halaman
 <img src="/IMAGE/tampilanabout.png" img>
 
-# 12. Membuat Layout Web dengan CSS 
+# 1.12 Membuat Layout Web dengan CSS 
 Buat file style.css pada direktori public. Pada praktikum lab4_layout CSS sudah pernah dibuat, copy saja filenya ke direktori public.
 <img src="/IMAGE/12.png" img>
+
+# Praktikum 2
 
 
 

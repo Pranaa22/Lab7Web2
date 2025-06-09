@@ -1,4 +1,4 @@
-# Praktikum 1-9 Pemrograman Web 2
+![image](https://github.com/user-attachments/assets/87d7e6b2-60c7-4f97-b964-964de44d9db5)# Praktikum 1-9 Pemrograman Web 2
 
 ```bash
 Nama : Pranaja widyadhana Wardana
@@ -86,55 +86,106 @@ Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url
 <img src="/IMAGE/1.10.png" img>
 
 # 1.11 Membuat controller
+Buat file baru dengan nama `Page.php` pada direktori `Controllers` dan isi kodenya:
+
+```bash
+<?php
+namespace App\Controllers;
+class Page extends BaseController
+{
+   public function about()
+   {
+      echo "Ini halaman About";
+   }
+   public function contact()
+   {
+      echo "Ini halaman Contact";
+   }
+   public function faqs()
+   {
+      echo "Ini halaman FAQ";
+   }
+}
+```
 <img src="/IMAGE/1.11" img>
 
 # 1.12 Akses kembali
-
+Refresh kembali browser nya maka tampilannya akan seperti berikut:
 <img src="/IMAGE/1.12.png" img>
 
-# 1.13 Akses kembali
+# 1.13 Method baru
+Pada `app/Controllers/Page.php` tambahkan kode berikut:
 
-<img src="/IMAGE/1.12.png" img>
-
-# 1.14 Akses kembali
-
+```bash
+public function tos()
+{
+   echo "ini halaman Term of Services";
+}
+```
 <img src="/IMAGE/1.13.png" img>
 
-# 1.15 Akses kembali
+# 1.14 Akses method baru
+Akses dengan alamat http://localhost:8080/lab11_ci/ci4/public/tos
 
 <img src="/IMAGE/1.14.png" img>
 
-# 1.15 Akses kembali
-
+# 1.15 Membuat view 
+Pada direktori `app/Views` buat file baru dengan nama `about.php` dan tambahkan kode berikut:
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title><?= $title; ?></title>
+</head>
+<body>
+   <h1><?= $title; ?></h1>
+   <hr>
+   <p><?= $content; ?></p>
+</body>
+</html>
+```
 <img src="/IMAGE/1.15.png" img>
 
-# 1.16 Akses kembali
-
+# 1.16 Ubah Method About
+Pada `app/Controllers/Page.php` ubah:
+```bash
+public function about()
+{
+   echo "Ini halaman About";
+}
+```
+Menjadi:
+```bash
+public function about()
+{
+   return view('about', [
+      'title' => 'Halaman About',
+      'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi halaman ini.'
+   ]);
+}
+```
 <img src="/IMAGE/1.16.png" img>
 
-# 1.17 Akses kembali
+# 1.17 Refresh Halaman
 
 <img src="/IMAGE/1.17.png" img>
 
-# 1.18 Akses kembali
+# 1.18 Membuat Layout CSS
 
 <img src="/IMAGE/1.18.png" img>
 
-# 1.19 Akses kembali
+# 1.19 Buat Folder Template
 
 <img src="/IMAGE/1.19.png" img>
 
-# 1.20 Akses kembali
+# 1.20 Ubah File About
 
 <img src="/IMAGE/1.20.png" img>
 
-# 1.21 Akses kembali
+# 1.21 Refresh Halaman About
 
 <img src="/IMAGE/1.21.png" img>
-
-# 1.22 Akses kembali
-
-<img src="/IMAGE/1.22.png" img>
 
 # Praktikum 2
 

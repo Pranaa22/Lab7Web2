@@ -29,10 +29,12 @@ Tugas: Pemrograman Web 2
 • Extrak file zip Codeigniter ke direktori `htdocs/lab11_ci.`<br>
 • Ubah nama direktory `framework-4.x.xx` menjadi `ci4.`<br> 
 • Buka browser dengan alamat `http://localhost/lab11_ci/ci4/public/`<br> 
+
 <img src="/IMAGE/1.1.png" img>
 
 # 1.2 Menjalankan CLI (Command Line Interface) 
 arahkan lokasi direktori sesuai dengan direktori kerja project dibuat `(xampp/htdocs/lab11_ci/p3web2/)`<br>
+
 <img src="/IMAGE/1.2.png" img>
 
 # 1.3 Menjalankan perintah
@@ -41,7 +43,8 @@ Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter:
 ```bash
 php spark
 ```
-<img src="/IMAGE/1.3..png" img>
+<br>
+<img src="/IMAGE/1.3.png" img>
 
 # 1.4 Ubah nama file
 Ubah nama file 'env' menjadi '.env' kemudian buka file tersebut dan ubah nilai variabel 
@@ -49,14 +52,18 @@ Ubah nama file 'env' menjadi '.env' kemudian buka file tersebut dan ubah nilai v
 <img src="/IMAGE/1.4.png" img>
 
 # 1.5 Contoh error 
+<br>
 <img src="/IMAGE/1.5.png" img>
+<br>
 
 # 1.6 Uji coba error
 Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file 
-'app/Controller/Home.php' hilangkan titik koma '(;)' pada akhir kode.
+'app/Controller/Home.php' hilangkan titik koma '(;)' pada akhir kode.<br>
+<br>
 <img src="/IMAGE/1.6.png" img>
 
 # 1.7 Struktur direktori
+<br>
 <img src="/IMAGE/1.7.png" img>
 
 # 1.8 Letak route
@@ -67,7 +74,7 @@ $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 ```
-
+<br>
 <img src="/IMAGE/1.8.png" img>
 
 # 1.9 Buka cmd
@@ -77,12 +84,13 @@ masuk directory `C:\xampp\htdocs\lab11_ci\ci4>` terlebih dahulu lalu jalankan
 ```bash
 php spark routes
 ```
+<br>
 <img src="/IMAGE/1.9.png" img>
 
 # 1.10 Ubah Method About
 Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url 
 `http://localhost:8080/about` 
-
+<br>
 <img src="/IMAGE/1.10.png" img>
 
 # 1.11 Membuat controller
@@ -107,10 +115,12 @@ class Page extends BaseController
    }
 }
 ```
-<img src="/IMAGE/1.11" img>
+<br>
+<img src="/IMAGE/1.11.png" img>
 
 # 1.12 Akses kembali
-Refresh kembali browser nya maka tampilannya akan seperti berikut:
+Refresh kembali browser nya maka tampilannya akan seperti berikut:<br>
+<br>
 <img src="/IMAGE/1.12.png" img>
 
 # 1.13 Method baru
@@ -122,11 +132,12 @@ public function tos()
    echo "ini halaman Term of Services";
 }
 ```
+<br>
 <img src="/IMAGE/1.13.png" img>
 
 # 1.14 Akses method baru
 Akses dengan alamat http://localhost:8080/lab11_ci/ci4/public/tos
-
+<br>
 <img src="/IMAGE/1.14.png" img>
 
 # 1.15 Membuat view 
@@ -145,6 +156,7 @@ Pada direktori `app/Views` buat file baru dengan nama `about.php` dan tambahkan 
 </body>
 </html>
 ```
+<br>
 <img src="/IMAGE/1.15.png" img>
 
 # 1.16 Ubah Method About
@@ -165,16 +177,17 @@ public function about()
    ]);
 }
 ```
+<br>
 <img src="/IMAGE/1.16.png" img>
 
 # 1.17 Refresh Halaman
-
+<br>
 <img src="/IMAGE/1.17.png" img>
 
 # 1.18 Membuat Layout Web dengan CSS
 Buat file css pada direktori `public` dengan nama `style.css` (copy file dari praktikum 
-`lab4_layout`). Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
-
+`lab4_layout`). Kita akan gunakan layout yang pernah dibuat pada praktikum 4.<br>
+<br>
 <img src="/IMAGE/1.18.png" img>
 
 # 1.19 Buat Folder Template
@@ -232,6 +245,7 @@ dan `footer.php`:
 
 </html>
 ```
+<br>
 <img src="/IMAGE/1.19.png" img>
 
 # 1.20 Ubah File About
@@ -251,11 +265,12 @@ Menjadi:
 
 <?= $this->include('template/footer'); ?>
 ```
-
+<br>
 <img src="/IMAGE/1.20.png" img>
 
 # 1.21 Refresh Halaman About
 Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
+<br>
 <img src="/IMAGE/1.21.png" img>
 
 # Praktikum 2

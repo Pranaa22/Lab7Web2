@@ -23,41 +23,52 @@ Tugas: Pemrograman Web 2
 
 # Praktikum 1
 
-# 1.1 Install codeigniter
+# 1.1 Instalasi Codeigniter 4 
 
-Link download: https://codeigniter.com/download
+• Unduh Codeigniter dari website `https://codeigniter.com/download`<br>
+• Extrak file zip Codeigniter ke direktori `htdocs/lab11_ci.`<br>
+• Ubah nama direktory `framework-4.x.xx` menjadi `ci4.`<br> 
+• Buka browser dengan alamat `http://localhost/lab11_ci/ci4/public/`<br> 
+<img src="/IMAGE/1.1.png" img>
 
-<img src="/IMAGE/gambar1.png" img>
+# 1.2 Menjalankan CLI (Command Line Interface) 
+arahkan lokasi direktori sesuai dengan direktori kerja project dibuat `(xampp/htdocs/lab11_ci/p3web2/)`<br>
+<img src="/IMAGE/1.2.png" img>
 
-# 1.2 Menjalankan CLI
-<img src="/IMAGE/picture2.png" img>
+# 1.3 Menjalankan perintah
+Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter:
 
-# 1.3 Mengaktifkan Mode Debugging
-<img src="/IMAGE/debug.png" img>
-Jika Error Tampilannya Akan Seperti Berikut:
-<img src="/IMAGE/error.png" img>
-
-# 1.4 Routing dan Controller
-<img src="/IMAGE/routebaru.png" img>
-<img src="/IMAGE/routebaru1.png" img>
+```bash
+php spark
 ```
-Ketika diakses akan mucul tampilan error 404 file not found, itu artinya file/page tersebut tidak
-ada. Untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang
-sesuai dengan routing yang dibuat yaitu Controller Page.
+<img src="/IMAGE/1.3..png" img>
+
+# 1.4 Ubah nama file
+Ubah nama file 'env' menjadi '.env' kemudian buka file tersebut dan ubah nilai variabel 
+'CI_ENVIRINMENT' menjadi 'development'.<br>
+<img src="/IMAGE/1.4.png" img>
+
+# 1.5 Contoh error 
+<img src="/IMAGE/1.5.png" img>
+
+# 1.6 Uji coba error
+Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file 
+'app/Controller/Home.php' hilangkan titik koma '(;)' pada akhir kode.
+<img src="/IMAGE/1.6.png" img>
+
+# 1.7 Struktur direktori
+<img src="/IMAGE/1.7.png" img>
+
+# 1.8 Letak route
+Pada file `app/Config/Routes.php`. Tambahkan kode berikut:<br>
+
+```bash
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
 ```
 
-# 1.5 Membuat Controller
-<img src="/IMAGE/controller1.png" img>
-<img src="/IMAGE/controller2.png" img>
-
-# 1.6 Penambahan Auto Routing
-<img src="/IMAGE/autoroute.png" img>
-
-# 1.7 Penambahan Method Baru
-<img src="/IMAGE/methodbaru.png" img>
-
-# 1.8 Tampilan Autoroute
-<img src="/IMAGE/tampilanautoroute.png" img>
+<img src="/IMAGE/1.8.png" img>
 
 # 1.9 Membuat View
 Buat file baru 

@@ -70,24 +70,10 @@ $routes->get('/faqs', 'Page::faqs');
 
 <img src="/IMAGE/1.8.png" img>
 
-# 1.9 Membuat View
-Buat file baru 
-dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya 
-seperti berikut. 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title><?= $title; ?></title>
-</head>
-<body>
-   <h1><?= $title; ?></h1>
-   <hr>
-   <p><?= $content; ?></p>
-</body>
-</html>
-
+# 1.9 Buka cmd
+Jalankan perintah:
+```bash
+php spark routes
 ```
 <img src="/IMAGE/membuatview.png" img>
 

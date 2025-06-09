@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/87d7e6b2-60c7-4f97-b964-964de44d9db5)# Praktikum 1-9 Pemrograman Web 2
+# Praktikum 1-9 Pemrograman Web 2
 
 ```bash
 Nama : Pranaja widyadhana Wardana

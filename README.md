@@ -171,20 +171,91 @@ public function about()
 
 <img src="/IMAGE/1.17.png" img>
 
-# 1.18 Membuat Layout CSS
+# 1.18 Membuat Layout Web dengan CSS
+Buat file css pada direktori `public` dengan nama `style.css` (copy file dari praktikum 
+`lab4_layout`). Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
 
 <img src="/IMAGE/1.18.png" img>
 
 # 1.19 Buat Folder Template
+Pada direktori `Views` buat folder `template`. Kemudian buat file `header.php`:
 
+```bash
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+    <link rel="stylesheet" href="<?= base_url('/style.css'); ?>">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Layout Sederhana</h1>
+        </header>
+        <nav>
+            <a href="<?= base_url('/'); ?>" class="active">Home</a>
+            <a href="<?= base_url('/artikel'); ?>">Artikel</a>
+            <a href="<?= base_url('/about'); ?>">About</a>
+            <a href="<?= base_url('/contact'); ?>">Kontak</a>
+        </nav>
+        <section id="wrapper">
+            <section id="main">
+```
+dan `footer.php`:
+
+```bash
+ </section>
+            <aside id="sidebar">
+                <div class="widget-box">
+                    <h3 class="title">Widget Header</h3>
+                    <ul>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                    </ul>
+                </div>
+                <div class="widget-box">
+                    <h3 class="title">Widget Text</h3>
+                    <p>
+                        Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, vestibulum mi porta,faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.
+                    </p>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+```
 <img src="/IMAGE/1.19.png" img>
 
 # 1.20 Ubah File About
+Ubah file `app/Views/about.php` dari:
+```bash
+<h1><?= $title; ?></h1>
+<hr>
+<p><?= $content; ?></p>
+```
+Menjadi:
+```bash
+<?= $this->include('template/header'); ?>
+
+<h1><?= $title; ?></h1>
+<hr>
+<p><?= $content; ?></p>
+
+<?= $this->include('template/footer'); ?>
+```
 
 <img src="/IMAGE/1.20.png" img>
 
 # 1.21 Refresh Halaman About
-
+Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
 <img src="/IMAGE/1.21.png" img>
 
 # Praktikum 2

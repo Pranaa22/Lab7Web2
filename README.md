@@ -71,26 +71,88 @@ $routes->get('/faqs', 'Page::faqs');
 <img src="/IMAGE/1.8.png" img>
 
 # 1.9 Buka cmd
-Jalankan perintah:
+Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan ikuti langkah 
+berikut:<br> 
+masuk directory `C:\xampp\htdocs\lab11_ci\ci4>` terlebih dahulu lalu jalankan
 ```bash
 php spark routes
 ```
-<img src="/IMAGE/membuatview.png" img>
+<img src="/IMAGE/1.9.png" img>
 
 # 1.10 Ubah Method About
-Ubah method about pada class Controller Page menjadi seperti berikut: 
-<img src="/IMAGE/methodabout.png" img>
+Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url 
+`http://localhost:8080/about` 
 
-# 1.11 Tampilan Halaman
-<img src="/IMAGE/tampilanabout.png" img>
+<img src="/IMAGE/1.10.png" img>
 
-# 1.12 Membuat Layout Web dengan CSS 
-Buat file style.css pada direktori public. Pada praktikum lab4_layout CSS sudah pernah dibuat, copy saja filenya ke direktori public.
-<img src="/IMAGE/12.png" img>
+# 1.11 Membuat controller
+<img src="/IMAGE/1.11" img>
+
+# 1.12 Akses kembali
+
+<img src="/IMAGE/1.12.png" img>
+
+# 1.13 Akses kembali
+
+<img src="/IMAGE/1.12.png" img>
+
+# 1.14 Akses kembali
+
+<img src="/IMAGE/1.13.png" img>
+
+# 1.15 Akses kembali
+
+<img src="/IMAGE/1.14.png" img>
+
+# 1.15 Akses kembali
+
+<img src="/IMAGE/1.15.png" img>
+
+# 1.16 Akses kembali
+
+<img src="/IMAGE/1.16.png" img>
+
+# 1.17 Akses kembali
+
+<img src="/IMAGE/1.17.png" img>
+
+# 1.18 Akses kembali
+
+<img src="/IMAGE/1.18.png" img>
+
+# 1.19 Akses kembali
+
+<img src="/IMAGE/1.19.png" img>
+
+# 1.20 Akses kembali
+
+<img src="/IMAGE/1.20.png" img>
+
+# 1.21 Akses kembali
+
+<img src="/IMAGE/1.21.png" img>
+
+# 1.22 Akses kembali
+
+<img src="/IMAGE/1.22.png" img>
 
 # Praktikum 2
 
+# Praktikum 3
 
+# Praktikum 4
+
+# Praktikum 5
+
+# Praktikum 6
+
+# Praktikum 7
+
+# Praktikum 8
+
+# Praktikum 9
+
+# Praktikum 10
 
 
 

@@ -152,7 +152,7 @@ Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url
 
 # Praktikum 9
 
-# Praktikum 10
+
 
 
 

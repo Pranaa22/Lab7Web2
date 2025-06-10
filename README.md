@@ -275,6 +275,13 @@ Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
 
 # Praktikum 2
 
+# 2.1 Buka Cmd
+ Pastikan MySQL Server sudah dapat dijalankan melalui 
+XAMPP.
+<img src="/IMAGE/2.1.png" img>
+
+# 2.2 Membuat Database 
+
 # Praktikum 3
 
 # Praktikum 4

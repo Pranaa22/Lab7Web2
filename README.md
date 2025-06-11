@@ -558,7 +558,7 @@ Buat dengan nama `form_add.php`.
 <?= $this->include('template/admin_footer'); ?> 
 ```
 <br>
-<img src="/IMAGE/2.18.png" img> <br>
+<img src="/IMAGE/2.18.png" img> 
 Maka hasilnya:
 <br>
 <img src="/IMAGE/2.19.png" img>

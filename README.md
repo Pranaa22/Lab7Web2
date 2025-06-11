@@ -271,9 +271,9 @@ Menjadi:
 Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
 <br>
 <img src="/IMAGE/1.21.png" img>
-
+<br>
 # Praktikum 2
-
+<br>
 # 2.1 Buka Cmd
 Pastikan MySQL Server sudah dapat dijalankan melalui 
 XAMPP. Lalu jalankan perintah berikut:
@@ -540,7 +540,7 @@ public function add()
 <br>
 <img src="/IMAGE/2.17.png" img>
 
-# 2.18 Buat View Untuk Form Tambah
+# 2.18 Buat View Untuk Form Add
 Buat dengan nama `form_add.php`.
 ```bash
 <?= $this->include('template/admin_header'); ?> 
@@ -593,7 +593,7 @@ Tambahkan fungsi/method baru pada `Controller Artikel` dengan nama `edit()`.
 <br>
 <img src="/IMAGE/2.20.png" img>
 
-# 2.20 Buat View Untuk Form Tambah 
+# 2.20 Buat View Untuk Form Edit 
 Buat  dengan nama `form_edit.php`. 
 ```bash
 <?= $this->include('template/admin_header'); ?> 

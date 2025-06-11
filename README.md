@@ -270,10 +270,11 @@ Menjadi:
 # 1.21 Refresh Halaman About
 Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
 <br>
-<img src="/IMAGE/1.21.png" img>
+<img src="/IMAGE/1.21.png" img><br>
 <br>
 # Praktikum 2
 <br>
+
 # 2.1 Buka Cmd
 Pastikan MySQL Server sudah dapat dijalankan melalui 
 XAMPP. Lalu jalankan perintah berikut:

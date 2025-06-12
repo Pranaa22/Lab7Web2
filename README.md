@@ -634,6 +634,8 @@ public function delete($id)
 
 # Praktikum 3
 
+
+
 # Praktikum 4
 
 # Praktikum 5

@@ -687,6 +687,7 @@ nunc pretium ac.</p>
 </html> 
 ```
 <img src="/IMAGE/3.1.png" img>
+<br>
 
 # 3.2 Modifikasi File View 
 Ubah `app/Views/home.php` agar sesuai dengan layout baru:
@@ -703,6 +704,7 @@ Ubah `app/Views/home.php` agar sesuai dengan layout baru:
 ```
 <img src="/IMAGE/3.2.png" img> <br>
 Sesuaikan juga untuk halaman lainnya yang ingin menggunakan format layout yang baru. 
+<br>
 
 # 3.3 Membuat Class View Cell 
 Buat folder `Cells` di dalam `app/` 
@@ -727,6 +729,7 @@ class ArtikelTerkini extends Cell
 } 
 ```
 <img src="/IMAGE/3.3.png" img>
+<br>
 
 # 3.4 Membuat View untuk View Cell 
 Buat folder `components` di dalam `app/Views/` 
@@ -740,7 +743,7 @@ $row['judul'] ?></a></li>
     <?php endforeach; ?> 
 </ul>
 ```
-<img src="/IMAGE/3.3.png" img>
+<img src="/IMAGE/3.4.png" img>
 <br>
 
 

@@ -1,4 +1,4 @@
-# Praktikum 1-9 Pemrograman Web 2
+![image](https://github.com/user-attachments/assets/c1c45fc2-ec10-4561-9e6c-d14bbe9131b2)# Praktikum 1-9 Pemrograman Web 2
 
 ```bash
 Nama : Pranaja widyadhana Wardana
@@ -748,10 +748,30 @@ $row['judul'] ?></a></li>
 
 # 3.5 Pertanyaan dan Tugas
 1. Sesuaikan data dengan praktikum sebelumnya, perlu melakukan perubahan `field` pada 
-database dengan menambahkan tanggal agar dapat mengambil data artikel terbaru.<br> 
+database dengan menambahkan tanggal agar dapat mengambil data artikel terbaru.<br>
+**Jawab:**
+Untuk mengambil artikel terbaru,perlu menambahkan field `created_at` di tabel `artikel` pada cmd.
+```bash
+ALTER TABLE artikel ADD created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+```
+<img src="/IMAGE/3.5.1.png" img><br>
+
+field `created_at` berhasil di tambahkan pada tabel `artikel` yang akan terisi otomatis saat data ditambahkan. Field ini digunakan untuk menampilkan artikel terbaru menggunakan fitur `View Cell`.
+```bash
+SELECT * FROM artikel;
+```
+<img src="/IMAGE/3.5.2.png" img><br>
+
+Tampilan data yang sudah ada isi kolom created_at:
+```bash
+SELECT id, judul, created_at FROM artikel ORDER BY created_at DESC LIMIT 5;
+```
+<img src="/IMAGE/3.5.3.png" img><br>
 
 2. Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan 
 improvisasi.<br>
+**Jawab:**
+DONE!
 
 3. Apa manfaat utama dari penggunaan `View Layout` dalam pengembangan aplikasi?<br>
    **Jawab:** Struktur layout (header, footer, sidebar) cukup ditulis sekali,<br>

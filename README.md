@@ -746,6 +746,30 @@ $row['judul'] ?></a></li>
 <img src="/IMAGE/3.4.png" img>
 <br>
 
+# 3.5 Pertanyaan dan Tugas
+1. Sesuaikan data dengan praktikum sebelumnya, perlu melakukan perubahan `field` pada 
+database dengan menambahkan tanggal agar dapat mengambil data artikel terbaru.<br> 
+
+2. Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan 
+improvisasi.<br>
+
+3. Apa manfaat utama dari penggunaan `View Layout` dalam pengembangan aplikasi?<br>
+   **Jawab:** Struktur layout (header, footer, sidebar) cukup ditulis sekali,<br>
+   Halaman hanya fokus pada kontennya,<br>
+   Memudahkan perawatan dan pengembangan desain antarmuka.<br>
+
+4. Jelaskan perbedaan antara `View Cell` dan `View` biasa.<br>
+
+   **Jawab:**
+   | View Biasa                                     | View Cell                                                                                     |
+   | ---------------------------------------------- | --------------------------------------------------------------------------------------------- |
+   | Digunakan untuk menampilkan data utama halaman | Digunakan untuk menampilkan komponen kecil yang bisa dipakai ulang (widget/sidebar)           |
+   | Dipanggil langsung dari controller             | Dipanggil dari view menggunakan `view_cell()`                                                 |
+   | Kurang modular jika digunakan berulang-ulang   | Sangat cocok untuk komponen dinamis & modular seperti "Artikel Terkini", "Popular Posts", dsb |
+<br>
+
+5. Ubah `View Cell` agar hanya menampilkan post dengan kategori tertentu.<br>
+
 
 
 

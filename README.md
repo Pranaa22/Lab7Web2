@@ -759,7 +759,6 @@ improvisasi.<br>
    Memudahkan perawatan dan pengembangan desain antarmuka.<br>
 
 4. Jelaskan perbedaan antara `View Cell` dan `View` biasa.<br>
-
    **Jawab:**
    | View Biasa                                     | View Cell                                                                                     |
    | ---------------------------------------------- | --------------------------------------------------------------------------------------------- |

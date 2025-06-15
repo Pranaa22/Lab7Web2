@@ -788,115 +788,126 @@ improvisasi.<br>
    Komponen yang bisa dipakai ulang di banyak halaman<br>
 
 5. Ubah `View Cell` agar hanya menampilkan post dengan kategori tertentu.<br>
+**Jawab:** <br>
 
-**5.2. Modifikasi `View Cell Class` `ArtikelTerkini.php`**<br>
-   File: `app/Cells/ArtikelTerkini.php`:<br>
-   Tambahkan:
+   **5.1. Tambahkan Kolom kategori di Tabel `artikel`**<br>
+   Jika belum ada, tambahkan kolom `kategori` pada tabel `artikel`:
    ```bash
-   <?php
-   
-   namespace App\Cells;
-   
-   use App\Models\ArtikelModel;
-   
-   class ArtikelTerkini
-   {
-       public function show($kategori = null)
-       {
-           $model = new ArtikelModel();
-           $query = $model->orderBy('created_at', 'DESC')->limit(5);
-   
-           if ($kategori) {
-               $query->where('kategori', $kategori);
-           }
-   
-           $artikel = $query->findAll();
-   
-           return view('components/artikel_terkini', ['artikel' => $artikel]);
-       }
-   }
+   ALTER TABLE artikel ADD kategori VARCHAR(100) DEFAULT 'umum';
    ```
-**5.3 Ubah View `artikel_terkini.php`**<br>
-   File: `app/Views/components/artikel_terkini.php`<br>
-   Tambahkan:
+   Lalu isi nilainya secara manual (bisa via phpMyAdmin):
    ```bash
-   <div class="widget-box">
-       <h3 class="title">Artikel Terkini</h3>
-       <ul>
-           <?php foreach ($artikel as $row): ?>
-               <li>
-                   <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
-                       <?= esc($row['judul']) ?>
-                   </a>
-               </li>
-           <?php endforeach; ?>
-       </ul>
-   </div>
+   UPDATE artikel SET kategori = 'teknologi' WHERE id = 3;
+   UPDATE artikel SET kategori = 'umum' WHERE id IN (1, 2);
    ```
-**5.4. Ubah File Layout `main.php` untuk Panggil `View Cell` dengan Kategori**<br>
-   File: `app/Views/layout/main.php`<br>
-   Tambahkan ini di `<aside id="sidebar">`:
-   ```bash:
-   <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'teknologi']) ?>
-   <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'umum']) ?>
-   ```
-   Ini akan menampilkan dua daftar: artikel teknologi dan artikel umum, tetapi disini saya hanya menggunakan salah satu saja yang baris kedua.<br>
-
-**5.5. Pastikan Halaman `/artikel` Extend Layout**<br>
-   File: `app/Views/artikel/index.php`<br>
-   Tambahkan:
-   ```bash
-   <?= $this->extend('layout/main') ?>
+   **5.2. Modifikasi `View Cell Class` `ArtikelTerkini.php`**<br>
+      File: `app/Cells/ArtikelTerkini.php`:<br>
+      Tambahkan:
+      ```bash
+      <?php
+      
+      namespace App\Cells;
+      
+      use App\Models\ArtikelModel;
+      
+      class ArtikelTerkini
+      {
+          public function show($kategori = null)
+          {
+              $model = new ArtikelModel();
+              $query = $model->orderBy('created_at', 'DESC')->limit(5);
+      
+              if ($kategori) {
+                  $query->where('kategori', $kategori);
+              }
+      
+              $artikel = $query->findAll();
+      
+              return view('components/artikel_terkini', ['artikel' => $artikel]);
+          }
+      }
+      ```
+   **5.3 Ubah View `artikel_terkini.php`**<br>
+      File: `app/Views/components/artikel_terkini.php`<br>
+      Tambahkan:
+      ```bash
+      <div class="widget-box">
+          <h3 class="title">Artikel Terkini</h3>
+          <ul>
+              <?php foreach ($artikel as $row): ?>
+                  <li>
+                      <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
+                          <?= esc($row['judul']) ?>
+                      </a>
+                  </li>
+              <?php endforeach; ?>
+          </ul>
+      </div>
+      ```
+   **5.4. Ubah File Layout `main.php` untuk Panggil `View Cell` dengan Kategori**<br>
+      File: `app/Views/layout/main.php`<br>
+      Tambahkan ini di `<aside id="sidebar">`:
+      ```bash:
+      <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'teknologi']) ?>
+      <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'umum']) ?>
+      ```
+      Ini akan menampilkan dua daftar: artikel teknologi dan artikel umum, tetapi disini saya hanya menggunakan salah satu saja yang baris kedua.<br>
    
-   <?= $this->section('content') ?>
-   <h1><?= $title; ?></h1>
-   
-   <?php foreach ($artikel as $row): ?>
-       <div class="artikel-box">
-           <h2><?= esc($row['judul']) ?></h2>
-           <p><?= esc(substr($row['isi'], 0, 120)) ?>...</p>
-           <a href="<?= base_url('/artikel/' . $row['slug']) ?>">Baca selengkapnya</a>
-       </div>
-   <?php endforeach; ?>
-   
-   <?= $this->endSection() ?>
-   ```
-**5.6. Penambahan dan Perubahan Pada File `css`**<br>
-   File: `public/style.css`<br>
-   Tambahkan:
-   ```bash
-   .widget-box {
-       background-color: #e0f0ff;
-       border: 1px solid #b0d4f1;
-       padding: 10px;
-       margin-bottom: 20px;
-   }
-   
-   .widget-box .title {
-       background-color: #2a6ebd;
-       color: white;
-       padding: 5px;
-       font-weight: bold;
-   }
-   
-   .widget-box ul {
-       list-style-type: none;
-       padding-left: 0;
-   }
-   
-   .widget-box ul li {
-       margin-bottom: 5px;
-   }
-   
-   .artikel-box {
-       background-color: #f9f9f9;
-       border: 1px solid #ddd;
-       padding: 15px;
-       margin-bottom: 20px;
-       border-radius: 5px;
-   }
-   
-   ```
+   **5.5. Pastikan Halaman `/artikel` Extend Layout**<br>
+      File: `app/Views/artikel/index.php`<br>
+      Tambahkan:
+      ```bash
+      <?= $this->extend('layout/main') ?>
+      
+      <?= $this->section('content') ?>
+      <h1><?= $title; ?></h1>
+      
+      <?php foreach ($artikel as $row): ?>
+          <div class="artikel-box">
+              <h2><?= esc($row['judul']) ?></h2>
+              <p><?= esc(substr($row['isi'], 0, 120)) ?>...</p>
+              <a href="<?= base_url('/artikel/' . $row['slug']) ?>">Baca selengkapnya</a>
+          </div>
+      <?php endforeach; ?>
+      
+      <?= $this->endSection() ?>
+      ```
+   **5.6. Penambahan dan Perubahan Pada File `css`**<br>
+      File: `public/style.css`<br>
+      Tambahkan:
+      ```bash
+      .widget-box {
+          background-color: #e0f0ff;
+          border: 1px solid #b0d4f1;
+          padding: 10px;
+          margin-bottom: 20px;
+      }
+      
+      .widget-box .title {
+          background-color: #2a6ebd;
+          color: white;
+          padding: 5px;
+          font-weight: bold;
+      }
+      
+      .widget-box ul {
+          list-style-type: none;
+          padding-left: 0;
+      }
+      
+      .widget-box ul li {
+          margin-bottom: 5px;
+      }
+      
+      .artikel-box {
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+      }
+      
+      ```
 
 
 

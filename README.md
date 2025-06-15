@@ -172,8 +172,8 @@ public function about()
       'title' => 'Halaman About',
       'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi halaman ini.'
    ]);
-}```
-<br>
+}
+```
 <img src="/IMAGE/1.16.png" img>
 
 # 1.17 Refresh Halaman
@@ -267,8 +267,9 @@ Menjadi:
 # 1.21 Refresh Halaman About
 Refresh tampilan pada alamat `http://localhost:8080/lab11_ci/ci4/public/about`
 <br>
-<img src="/IMAGE/1.21.png" img><br>
+<img src="/IMAGE/1.21.png" img>
 <br>
+
 # Praktikum 2
 <br>
 
@@ -628,8 +629,8 @@ public function delete($id)
 <img src="/IMAGE/2.23.png" img>
 <br>
 
-
 # Praktikum 3
+<br>
 
 # 3.1 Membuat Layout Utama 
 Buat folder layout di dalam `app/Views/` 
@@ -909,7 +910,9 @@ improvisasi.<br>
       Hasil Akhir :
    <img src="/IMAGE/3.5.0.png" img> <br>
    <br>
+   
 # Praktikum 4
+<br>
 
 # 4.1 Membuat Tabel: User Login
 Untuk memulai membuat modul Login, yang perlu disiapkan adalah database server<br> 
@@ -1141,8 +1144,54 @@ Tambahkan method `logout` pada `Controller User` seperti berikut:
         return redirect()->to('/user/login'); 
     } 
 ```
+<br>
 
 # Praktikum 5
+<br>
+
+# 5.1 Membuat Pagination
+Pagination merupakan proses yang digunakan untuk membatasi tampilan yang panjang<br> 
+dari data yang banyak pada sebuah website. Fungsi pagination adalah memecah tampilan<br> 
+menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan pada <br>
+setiap halaman.
+<br>
+Pada Codeigniter 4, fungsi pagination sudah tersedia pada Library sehingga cukup mudah<br> 
+menggunakannya.
+<br> 
+Untuk membuat pagination, buka Kembali `Controller Artikel`, kemudian modifikasi kode 
+pada method `admin_index`.<br>
+Dari:
+```bash
+public function admin_index()  
+    { 
+        $title = 'Daftar Artikel'; 
+        $model = new ArtikelModel(); 
+        $artikel = $model->findAll(); 
+        return view('artikel/admin_index', compact('artikel', 'title')); 
+    }
+```
+<br>
+Menjadi:
+```bash
+public function admin_index()  
+    { 
+        $title = 'Daftar Artikel'; 
+        $model = new ArtikelModel(); 
+        $data = [
+            'title'   => $title, 
+            'artikel' => $model->paginate(10), #data dibatasi 10 record per halaman
+            'pager'   => $model->pager,
+            ]; 
+        return view('artikel/admin_index', $data);  
+    } 
+```
+Kemudian buka file `views/artikel/admin_index.php` dan tambahkan kode berikut<br> 
+dibawah deklarasi tabel data.
+```bash
+<?= $pager->links(); ?> 
+```
+Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat hasilnya.<br>
+<img src="/IMAGE/5.1.png" img> <br>
 
 # Praktikum 6
 
@@ -1151,6 +1200,10 @@ Tambahkan method `logout` pada `Controller User` seperti berikut:
 # Praktikum 8
 
 # Praktikum 9
+
+# Praktikum 10
+
+# Praktikum 11
 
 
 

@@ -1050,8 +1050,8 @@ primary">Login</button>
 
 # 4.5 Membuat Database Seeder 
 Database seeder digunakan untuk membuat data dummy. Untuk keperluan ujicoba modul<br> 
-login, kita perlu memasukkan data user dan password kedaalam database. Untuk itu buat<br> 
-database seeder untuk tabel user. Buka CLI, kemudian tulis perintah berikut:
+login, kita perlu memasukkan `data user` dan `password` kedaalam database. Untuk itu buat<br> 
+database `seeder` untuk tabel `user`. Buka CLI, kemudian tulis perintah berikut:
 ```bash
 php spark make:seeder UserSeeder
 ```
@@ -1087,7 +1087,7 @@ Selanjutnya buka url `http://localhost:8080/user/login` seperti berikut:<br>
 <img src="/IMAGE/4.6.png" img> <br>
 
 # 4.7 Menambahkan Auth Filter 
-Selanjutnya membuat filer untuk halaman admin. Buat file baru dengan nama `Auth.php` pada<br>
+Selanjutnya membuat filer untuk halaman `admin`. Buat file baru dengan nama `Auth.php` pada<br>
 direktori `app/Filters`.<br> 
 Tambahkan:
 ```bash
@@ -1121,7 +1121,7 @@ Selanjutnya buka file `app/Config/Filters.php` tambahkan kode berikut:
 ```
 <img src="/IMAGE/4.7.png" img> <br>
 
-Selanjutnya buka file app/Config/Routes.php dan sesuaikan kodenya.
+Selanjutnya buka `file app/Config/Routes.php` dan sesuaikan kodenya.
 <img src="/IMAGE/4.7'2.png" img> <br>
 
 # 4.8 Percobaan Akses Menu Admin 

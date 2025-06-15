@@ -1190,11 +1190,14 @@ public function admin_index()
     } 
 ```
 <br>
+
 Kemudian buka file `views/artikel/admin_index.php` dan tambahkan kode berikut<br> 
 dibawah deklarasi tabel data.
+
 ```bash
 <?= $pager->links(); ?> 
 ```
+
 Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat hasilnya.<br>
 <img src="/IMAGE/5.1.png" img> <br>
 

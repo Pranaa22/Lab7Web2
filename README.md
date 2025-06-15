@@ -1173,7 +1173,9 @@ public function admin_index()
     }
 ```
 <br>
+
 Menjadi:
+
 ```bash
 public function admin_index()  
     { 
@@ -1187,6 +1189,7 @@ public function admin_index()
         return view('artikel/admin_index', $data);  
     } 
 ```
+<br>
 Kemudian buka file `views/artikel/admin_index.php` dan tambahkan kode berikut<br> 
 dibawah deklarasi tabel data.
 ```bash

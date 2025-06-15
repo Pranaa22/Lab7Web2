@@ -805,23 +805,22 @@ improvisasi.<br>
       Tambahkan:
       ```bash
       <?php
-      
       namespace App\Cells;
       
       use App\Models\ArtikelModel;
       
       class ArtikelTerkini
       {
-          public function show($kategori = null)
+          public function show()
           {
               $model = new ArtikelModel();
-              $query = $model->orderBy('created_at', 'DESC')->limit(5);
       
-              if ($kategori) {
-                  $query->where('kategori', $kategori);
-              }
-      
-              $artikel = $query->findAll();
+              // Ambil artikel dari 2 kategori: teknologi & umum
+              $artikel = $model
+                  ->whereIn('kategori', ['teknologi', 'umum'])
+                  ->orderBy('created_at', 'DESC')
+                  ->limit(5)
+                  ->findAll();
       
               return view('components/artikel_terkini', ['artikel' => $artikel]);
           }
@@ -837,7 +836,7 @@ improvisasi.<br>
               <?php foreach ($artikel as $row): ?>
                   <li>
                       <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
-                          <?= esc($row['judul']) ?>
+                           <?= esc($row['judul']) ?> <small>(<?= esc($row['kategori']) ?>)</small>
                       </a>
                   </li>
               <?php endforeach; ?>
@@ -848,10 +847,9 @@ improvisasi.<br>
       File: `app/Views/layout/main.php`<br>
       Tambahkan ini di `<aside id="sidebar">`:
       ```bash:
-      <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'teknologi']) ?>
-      <?= view_cell('App\\Cells\\ArtikelTerkini::show', ['kategori' => 'umum']) ?>
+      <?= view_cell('App\\Cells\\ArtikelTerkini::show') ?>
       ```
-      Ini akan menampilkan dua daftar: artikel teknologi dan artikel umum, tetapi disini saya hanya menggunakan salah satu saja yang baris kedua.<br>
+      Ini akan menampilkan dua daftar: artikel teknologi dan artikel umum.<br>
    
    **5.5. Pastikan Halaman `/artikel` Extend Layout**<br>
       File: `app/Views/artikel/index.php`<br>
@@ -908,6 +906,8 @@ improvisasi.<br>
       }
       
       ```
+      Hasil Akhir :
+      
 
 
 

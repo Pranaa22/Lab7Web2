@@ -1197,9 +1197,16 @@ dibawah deklarasi tabel data.
 ```bash
 <?= $pager->links(); ?> 
 ```
-
+<br>
 Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat hasilnya.<br>
 <img src="/IMAGE/5.1.png" img> <br>
+
+# 5.2 Membuat Pencarian  
+Untuk membuat pencarian data, buka kembali `Controller Artikel`, pada method 
+`admin_index` ubah kodenya seperti berikut.
+```bash
+
+```
 
 # Praktikum 6
 

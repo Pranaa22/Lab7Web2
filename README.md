@@ -1152,14 +1152,16 @@ Tambahkan method `logout` pada `Controller User` seperti berikut:
 # 5.1 Membuat Pagination
 Pagination merupakan proses yang digunakan untuk membatasi tampilan yang panjang<br> 
 dari data yang banyak pada sebuah website. Fungsi pagination adalah memecah tampilan<br> 
-menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan pada <br>
-setiap halaman.
+menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan pada setiap halaman.
 <br>
+
 Pada Codeigniter 4, fungsi pagination sudah tersedia pada Library sehingga cukup mudah<br> 
 menggunakannya.
 <br> 
+
 Untuk membuat pagination, buka Kembali `Controller Artikel`, kemudian modifikasi kode 
-pada method `admin_index`.<br>
+pada method `admin_index`.
+<br>
 Dari:
 ```bash
 public function admin_index()  

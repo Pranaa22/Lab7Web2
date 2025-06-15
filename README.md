@@ -1083,7 +1083,7 @@ php spark db:seed UserSeeder
 ```
 
 # 4.6 Uji Coba Login
-Selanjutnya buka url `http://localhost:8080/user/login` seperti berikut:
+Selanjutnya buka url `http://localhost:8080/user/login` seperti berikut:<br>
 <img src="/IMAGE/4.6.png" img> <br>
 
 # 4.7 Menambahkan Auth Filter 

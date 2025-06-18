@@ -1224,7 +1224,7 @@ Untuk membuat pencarian data, buka kembali `Controller Artikel`, pada method
         return view('artikel/admin_index', $data);
     }
 ```
-<br>
+
 Kemudian buka kembali file `views/artikel/admin_index.php` dan tambahkan form pencarian sebelum deklarasi tabel seperti berikut:
 ```bash
 <form method="get" class="form-search">

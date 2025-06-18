@@ -1317,10 +1317,10 @@ otomatis ditandai sesuai kategori yang di pilih di database. Dan pada `Sidebar`,
 Artikel baru/ yang di update otomatis masuk ke kategori yang dipilih, tidak lagi selalu kategori 'umum'.
 <br>
 pada saat:
-<img src="/IMAGE/improve1.1 png" img> 
+<img src="/IMAGE/improve1.1.png" img> 
 <br>
 Maka pada bagian sidebar `Artikel Terkini` akan ditandai sesuai kategori yang dipilih: `(teknologi)`:
-<img src="/IMAGE/improve1.2png" img> 
+<img src="/IMAGE/improve1.2.png" img> 
 <br>
 📍 File: `app/Views/artikel/form_add.php` dan `form_edit.php`
 ```bash

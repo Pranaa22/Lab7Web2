@@ -1323,11 +1323,19 @@ Pilih kategori yang diinginkan:
 <img src="/IMAGE/improve1.1.png" img> 
 <br>
 
-Maka pada bagian sidebar `Artikel Terkini` akan ditandai sesuai kategori yang dipilih, seperti contoh disini<br>
-artikel dengan judul `Perkembangan AI Di digidaw` dirubah kategori nya dari `(umum)` menjadi `(teknologi)`:
+Maka pada bagian sidebar `Artikel Terkini` Artikel dikelompokkan sesuai  dengan `kategori` yang dipilih. 
 <br>
 
-<img src="/IMAGE/improve1.2.png" img> 
+Daftar Semua Artikel:
+<img src="/IMAGE/improve1.2.1.png" img> 
+<br>
+
+Daftar Semua Teknologi:
+<img src="/IMAGE/improve1.2.2.png" img> 
+<br>
+
+Daftar Semua Umum:
+<img src="/IMAGE/improve1.2.3.png" img> 
 <br>
 
 📍 File: `app/Views/artikel/form_add.php` dan `form_edit.php`

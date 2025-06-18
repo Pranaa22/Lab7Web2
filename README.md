@@ -1299,6 +1299,11 @@ Ujicoba file `upload` dengan mengakses menu `tambah artikel`.
 <img src="/IMAGE/6.1.png" img> 
 <br>
 
+Isi Artikel :<br>
+
+<img src="/IMAGE/6.1.2.png" img>/ 
+<br>
+
 # Praktikum 7
 <br>
 

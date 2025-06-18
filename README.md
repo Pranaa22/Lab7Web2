@@ -1322,7 +1322,7 @@ Pilih kategori yang diinginkan:
 
 <img src="/IMAGE/improve1.1.png" img> 
 <br>
-<br>
+
 Maka pada bagian sidebar `Artikel Terkini` akan ditandai sesuai kategori yang dipilih, seperti contoh disini<br>
 artikel dengan judul `Perkembangan AI Di digidaw` dirubah kategori nya dari `(umum)` menjadi `(teknologi)`:
 <br>

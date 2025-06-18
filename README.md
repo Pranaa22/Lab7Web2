@@ -1301,7 +1301,7 @@ Ujicoba file `upload` dengan mengakses menu `tambah artikel`.
 
 Isi Artikel :<br>
 
-<img src="/IMAGE/6.1.2.png" img>/ 
+<img src="/IMAGE/6.1.2.png" img> 
 <br>
 
 # Praktikum 7

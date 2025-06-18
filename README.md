@@ -5,7 +5,7 @@ Kelas: TI.23.A2
 Tugas: Pemrograman Web 2
 ```
 
-# Daftar Praktikum
+# Daftar Isi Praktikum
 
 *   **[Praktikum 1](#praktikum-1)**
 *   **[Praktikum 2](#praktikum-2)**

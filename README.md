@@ -1202,11 +1202,45 @@ Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat 
 <img src="/IMAGE/5.1.png" img> <br>
 
 # 5.2 Membuat Pencarian  
+Pencarian data digunakan untuk memfilter data.
+<br>
 Untuk membuat pencarian data, buka kembali `Controller Artikel`, pada method 
 `admin_index` ubah kodenya seperti berikut.
 ```bash
-
+ public function admin_index()
+    {
+        $title = 'Daftar Artikel';
+        $q = $this->request->getVar('q') ?? '';
+        $model = new ArtikelModel();
+        $data = [
+            'title'   => $title,
+            'q'       => $q,
+            'artikel' => $model->like('judul', $q)->paginate(10),
+            'pager'   => $model->pager,
+        ];
+        return view('artikel/admin_index', $data);
+    }
 ```
+<br>
+Kemudian buka kembali file `views/artikel/admin_index.php` dan tambahkan form pencarian sebelum deklarasi tabel seperti berikut:
+```bash
+<form method="get" class="form-search">
+    <input type="text" name="q" value="<?= $q; ?>" placeholder="Cari data">
+    <input type="submit" value="Cari" class="btn btn-primary">
+</form>
+```
+Dan pada link pager ubah seperti berikut.<br>
+Ganti: 
+```bash
+<?= $pager->links(); ?>
+```
+Menjadi:
+```bash
+<?= $pager->only(['q'])->links(); ?>
+```
+<img src="/IMAGE/5.2.png" img> 
+
+
 
 # Praktikum 6
 

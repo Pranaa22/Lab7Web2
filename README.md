@@ -1249,8 +1249,8 @@ Menjadi:
 
 # 6.1 Upload Gambar pada Artikel 
 Menambahkan fungsi unggah gambar pada tambah artikel.<br>  
-Buka kembali Controller Artikel pada project sebelumnya, sesuaikan kode pada method<br> 
-add seperti berikut:
+Buka kembali `Controller Artikel` pada project sebelumnya, sesuaikan kode pada `method`<br> 
+`add` seperti berikut:
 ```bash
   public function add()  
     { 
@@ -1277,10 +1277,25 @@ add seperti berikut:
         return view('artikel/form_add', compact('title')); 
     } 
 ```
+<br>
 
+Kemudian pada file `views/artikel/form_add.php` tambahkan field input file seperti berikut:
+```bash
+ <p> 
+        <input type="file" name="gambar">
+</p>
+```
+<br>
 
+Dan sesuaikan tag form dengan menambahkan `ecrypt type` seperti berikut.
+```bash
+<form action="" method="post" enctype="multipart/form-data">
+```
 
+Ujicoba file `upload` dengan mengakses menu `tambah artikel`.
+<br>
 
+<img src="/IMAGE/6.1.png" img> 
 <br>
 
 # Praktikum 7

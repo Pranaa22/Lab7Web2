@@ -1302,7 +1302,21 @@ Ujicoba file `upload` dengan mengakses menu `tambah artikel`.
 # Praktikum 7
 <br>
 
-teks
+# 7.1 Persiapan 
+Pastikan MySQL Server sudah berjalan, dan buka database `lab_ci4`<br>
+
+# 7.2 Membuat Tabel Kategori 
+Kita akan membuat tabel baru bernama `kategori` untuk mengkategorikan artikel. Struktur Tabel `kategori`<br> 
+Jalankan query berikut: 
+```bash
+CREATE TABLE kategori ( 
+   id_kategori INT(11) AUTO_INCREMENT, 
+   nama_kategori VARCHAR(100) NOT NULL, 
+   slug_kategori VARCHAR(100), 
+   PRIMARY KEY (id_kategori) 
+); 
+```
+
 
 # Praktikum 8
 <br>

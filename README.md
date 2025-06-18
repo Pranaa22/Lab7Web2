@@ -23,9 +23,9 @@ Tugas: Pemrograman Web 2
 
 # Praktikum 1
 
-# 1.1 Instalasi Codeigniter 4 
+# 1.1 Instalasi Codelgniter 4 
 
-• Unduh Codeigniter dari website `https://codeigniter.com/download`<br>
+• Unduh Codeigniter dari website `https://codelgniter.com/download`<br>
 • Extrak file zip Codeigniter ke direktori `htdocs/lab11_ci.`<br>
 • Ubah nama direktory `framework-4.x.xx` menjadi `ci4.`<br> 
 • Buka browser dengan alamat `http://localhost/lab11_ci/ci4/public/`<br> 
@@ -38,7 +38,7 @@ arahkan lokasi direktori sesuai dengan direktori kerja project dibuat `(xampp/ht
 <img src="/IMAGE/1.2.png" img>
 
 # 1.3 Menjalankan perintah
-Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter:
+Perintah yang dapat dijalankan untuk memanggil CLI Codelgniter:
 
 ```bash
 php spark

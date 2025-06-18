@@ -1330,11 +1330,11 @@ Daftar Semua Artikel:
 <img src="/IMAGE/improve1.2.1.png" img> 
 <br>
 
-Daftar Semua Teknologi:
+Daftar Artikel Teknologi:
 <img src="/IMAGE/improve1.2.2.png" img> 
 <br>
 
-Daftar Semua Umum:
+Daftar Artikel Umum:
 <img src="/IMAGE/improve1.2.3.png" img> 
 <br>
 

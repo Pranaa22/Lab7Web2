@@ -1676,11 +1676,11 @@ $k['nama_kategori']; ?></option>
 <?= $this->include('template/admin_footer'); ?> 
 ```
 
-# 8. Testing 
-Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik: 
-• Menampilkan daftar artikel dengan nama kategori. 
-• Menambah artikel baru dengan memilih kategori. 
-• Mengedit artikel dan mengubah kategorinya. 
+# 7.8 Testing 
+Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
+• Menampilkan daftar artikel dengan nama kategori.<br> 
+• Menambah artikel baru dengan memilih kategori.<br> 
+• Mengedit artikel dan mengubah kategorinya. <br>
 • Menghapus artikel. 
 <br>
 

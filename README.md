@@ -7,6 +7,7 @@ Tugas: Pemrograman Web 2
 
 # Daftar Isi Praktikum
 
+*   **[Improvisasi Fitur Tambahan](#improvisasi-fitur-tambahan)**
 *   **[Praktikum 1](#praktikum-1)**
 *   **[Praktikum 2](#praktikum-2)**
 *   **[Praktikum 3](#praktikum-3)**
@@ -16,6 +17,8 @@ Tugas: Pemrograman Web 2
 *   **[Praktikum 7](#praktikum-7)**
 *   **[Praktikum 8](#praktikum-8)**
 *   **[Praktikum 9](#praktikum-9)**
+*   **[Praktikum 10](#praktikum-10)**
+*   **[Praktikum 11](#praktikum-11)**
 ---
 
 # Praktikum 1
@@ -1239,21 +1242,142 @@ Menjadi:
 <?= $pager->only(['q'])->links(); ?>
 ```
 <img src="/IMAGE/5.2.png" img> 
-
-
+<br>
 
 # Praktikum 6
+<br>
+
+# 6.1 Upload Gambar pada Artikel 
+Menambahkan fungsi unggah gambar pada tambah artikel.<br>  
+Buka kembali Controller Artikel pada project sebelumnya, sesuaikan kode pada method<br> 
+add seperti berikut:
+```bash
+  public function add()  
+    { 
+        // validasi data. 
+        $validation =  \Config\Services::validation(); 
+        $validation->setRules(['judul' => 'required']); 
+        $isDataValid = $validation->withRequest($this->request)->run(); 
+ 
+        if ($isDataValid) 
+        { 
+            $file = $this->request->getFile('gambar'); 
+            $file->move(ROOTPATH . 'public/gambar'); 
+ 
+            $artikel = new ArtikelModel(); 
+            $artikel->insert([ 
+                'judul'  => $this->request->getPost('judul'), 
+                'isi'    => $this->request->getPost('isi'), 
+                'slug'   => url_title($this->request->getPost('judul')), 
+                'gambar' => $file->getName(), 
+            ]); 
+            return redirect('admin/artikel'); 
+        } 
+        $title = "Tambah Artikel"; 
+        return view('artikel/form_add', compact('title')); 
+    } 
+```
+
+
+
+
+<br>
 
 # Praktikum 7
+<br>
+
+teks
 
 # Praktikum 8
+<br>
+
+teks
 
 # Praktikum 9
+<br>
+
+teks
 
 # Praktikum 10
+<br>
+
+teks
 
 # Praktikum 11
+<br>
 
+teks
+
+# Improvisasi Fitur Tambahan
+<br>
+
+# 1. Menambahkan Kolom `kategori` pada Form `Tambah` dan `Edit` Artikel
+User bisa memilih kategori artikel saat `menambahkan` atau `mengedit` artikel. dan`Artikel`<br>
+otomatis ditandai sesuai kategori di database. Dan pada `Sidebar`, menampilkan kategori artikel secara dinamis.<br>
+Artikel baru/ yang di update otomatis masuk ke kategori yang dipilih, tidak lagi selalu kategori 'umum'.
+<br>
+📍 File: `app/Views/artikel/form_add.php` dan `form_edit.php`
+```bash
+<div class="form-group">
+    <label for="kategori">Kategori</label>
+    <select name="kategori" id="kategori" required>
+        <option value="">-- Pilih Kategori --</option>
+        <option value="umum">Umum</option>
+        <option value="teknologi">Teknologi</option>
+    </select>
+</div>
+```
+
+Di form edit (form_edit.php), disesuaikan agar opsi terpilih default-nya mengikuti data yang sedang diedit:
+```bash
+<option value="umum" <?= $data['kategori'] === 'umum' ? 'selected' : '' ?>>Umum</option>
+<option value="teknologi" <?= $data['kategori'] === 'teknologi' ? 'selected' : '' ?>>Teknologi</option>
+```
+
+# 1.2 Menyimpan Data Kategori di Controller
+📍 File: `app/Controllers/Artikel.php`<br>
+Method `add()`
+```bash
+$artikel->insert([
+    'judul'    => $this->request->getPost('judul'),
+    'isi'      => $this->request->getPost('isi'),
+    'slug'     => url_title($this->request->getPost('judul')),
+    'kategori' => $this->request->getPost('kategori'),
+]);
+```
+
+Method `edit($id)`
+```bash
+$artikel->update($id, [
+    'judul'    => $this->request->getPost('judul'),
+    'isi'      => $this->request->getPost('isi'),
+    'kategori' => $this->request->getPost('kategori'),
+]);
+```
+<br>
+
+# 1.3 Menambahkan Field `kategori` di Model
+📍 File: `app/Models/ArtikelModel.php`<br>
+Tambahkan `kategori` ke dalam `$allowedFields`, agar bisa diproses oleh model:
+```bash
+protected $allowedFields = ['judul', 'isi', 'slug', 'gambar', 'kategori'];
+```
+Tanpa ini, CodeIgniter akan mengabaikan field kategori meskipun dikirim oleh form.
+<br>
+
+# 1.4 Menampilkan Kategori di Sidebar
+📍 File: `app/Views/components/artikel_terkini.php`
+```bash
+<ul>
+<?php foreach ($artikel as $row): ?>
+    <li>
+        <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
+            <?= esc($row['judul']) ?> <small>(<?= esc($row['kategori']) ?>)</small>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>
+```
 
 
 

@@ -1314,7 +1314,7 @@ teks
 # 1.1 Menambahkan Kolom `kategori` pada Form `Tambah` dan `Edit` Artikel
 User bisa memilih `kategori` artikel saat `menambahkan` atau `mengedit` artikel. Saat user melakukan `edit`<br>
 atau `tambah` pada artikel lalu memilih `kategori` yang diinginkan database otomatis merubah isi kolom `kategori` yang<br>
-ada di dalam nya. Artikel yang baru di`tambah` ataupun di`edit` otomatis ditandai sesuai `kategori`nya
+ada di dalam nya. Artikel yang baru di`tambah` ataupun di`edit` otomatis dikelompokkan sesuai `kategori`nya
 <br>
 <br>
 Pilih kategori yang diinginkan:

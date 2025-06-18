@@ -1311,7 +1311,7 @@ teks
 # Improvisasi Fitur Tambahan
 <br>
 
-# 1. Menambahkan Kolom `kategori` pada Form `Tambah` dan `Edit` Artikel
+# 1.1 Menambahkan Kolom `kategori` pada Form `Tambah` dan `Edit` Artikel
 User bisa memilih `kategori` artikel saat `menambahkan` atau `mengedit` artikel. Saat user melakukan `edit`<br>
 atau `tambah` pada artikel lalu memilih `kategori` yang diinginkan database otomatis merubah `kategori` yang<br>
 ada di dalam database. Artikel yang baru di`tambah` ataupun di`edit` otomatis ditandai sesuai `kategori`nya
@@ -1350,23 +1350,28 @@ Di form edit (form_edit.php), disesuaikan agar opsi terpilih default-nya mengiku
 
 # 1.2 Menyimpan Data Kategori di Controller
 📍 File: `app/Controllers/Artikel.php`<br>
-Method `add()`
+Lalu modifikasi fungsi index agar bisa mem-filter artikel berdasarkan `?kategori=...`:
 ```bash
-$artikel->insert([
-    'judul'    => $this->request->getPost('judul'),
-    'isi'      => $this->request->getPost('isi'),
-    'slug'     => url_title($this->request->getPost('judul')),
-    'kategori' => $this->request->getPost('kategori'),
-]);
-```
+public function index()
+{
+    $model = new ArtikelModel();
+    $kategori = $this->request->getGet('kategori');
 
-Method `edit($id)`
-```bash
-$artikel->update($id, [
-    'judul'    => $this->request->getPost('judul'),
-    'isi'      => $this->request->getPost('isi'),
-    'kategori' => $this->request->getPost('kategori'),
-]);
+    if ($kategori) {
+        $artikel = $model->where('kategori', $kategori)->paginate(5);
+        $title = 'Daftar Artikel ' . ucfirst($kategori);
+    } else {
+        $artikel = $model->paginate(5);
+        $title = 'Daftar Artikel';
+    }
+
+    return view('artikel/index', [
+        'artikel' => $artikel,
+        'title'   => $title,
+        'pager'   => $model->pager,
+        'kategori' => $kategori
+    ]);
+}
 ```
 <br>
 
@@ -1382,16 +1387,36 @@ Tanpa ini, CodeIgniter akan mengabaikan field kategori meskipun dikirim oleh for
 # 1.4 Menampilkan Kategori di Sidebar
 📍 File: `app/Views/components/artikel_terkini.php`
 ```bash
-<ul>
-<?php foreach ($artikel as $row): ?>
-    <li>
-        <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
-            <?= esc($row['judul']) ?> <small>(<?= esc($row['kategori']) ?>)</small>
-        </a>
-    </li>
-<?php endforeach; ?>
-</ul>
+<div class="widget-box">
+    <h3 class="title">Artikel Terkini</h3>
+    <ul>
+        <?php foreach ($kategoriList as $row): ?>
+            <li>
+                <a href="<?= base_url('/artikel?kategori=' . urlencode($row['kategori'])); ?>">
+                    Artikel <?= ucfirst($row['kategori']); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
 ```
+<br>
+
+# 1.5 Memperbaiki Tampilan Judul Halaman
+File: `app/Views/artikel/index.php`<br>
+Gunakan variabel `$title` agar judul halaman berubah tergantung kategori:
+```bash
+<h2 class="sub-judul"><?= $title; ?></h2>
+```
+<br>
+
+Tambahkan `pagination` yang tetap mempertahankan kategori saat berpindah halaman:
+```bash
+<div class="pagination">
+    <?= $pager->only(['kategori'])->links(); ?>
+</div>
+```
+
 
 
 

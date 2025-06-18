@@ -1316,12 +1316,17 @@ User bisa memilih `kategori` artikel saat `menambahkan` atau `mengedit` artikel.
 atau `tambah` pada artikel lalu memilih `kategori` yang diinginkan database otomatis merubah `kategori` yang<br>
 ada di dalam database. Artikel yang baru di`tambah` ataupun di`edit` otomatis ditandai sesuai `kategori`nya
 <br>
+
 pada saat:
+<br>
 <img src="/IMAGE/improve1.1.png" img> 
 <br>
-Maka pada bagian sidebar `Artikel Terkini` akan ditandai sesuai kategori yang dipilih: `(teknologi)`:
+Maka pada bagian sidebar `Artikel Terkini` akan ditandai sesuai kategori yang dipilih, seperti contoh disini<br>
+artikel dengan judul `Perkembangan AI Di digidaw` dirubah kategori nya dari `(umum)` menjadi `(teknologi)`:
+<br>
 <img src="/IMAGE/improve1.2.png" img> 
 <br>
+
 📍 File: `app/Views/artikel/form_add.php` dan `form_edit.php`
 ```bash
 <div class="form-group">

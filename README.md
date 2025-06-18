@@ -1312,9 +1312,9 @@ teks
 <br>
 
 # 1. Menambahkan Kolom `kategori` pada Form `Tambah` dan `Edit` Artikel
-User bisa memilih kategori artikel saat `menambahkan` atau `mengedit` artikel. dan `Artikel`<br>
-otomatis ditandai sesuai kategori yang di pilih di database. Dan pada `Sidebar`, menampilkan kategori artikel secara dinamis.<br>
-Artikel baru/ yang di update otomatis masuk ke kategori yang dipilih, tidak lagi selalu kategori 'umum'.
+User bisa memilih `kategori` artikel saat `menambahkan` atau `mengedit` artikel. Saat user melakukan `edit`<br>
+atau `tambah` pada artikel lalu memilih `kategori` yang diinginkan database otomatis merubah `kategori` yang<br>
+ada di dalam database. Artikel yang baru di`tambah` ataupun di`edit` otomatis ditandai sesuai `kategori`nya
 <br>
 pada saat:
 <img src="/IMAGE/improve1.1.png" img> 

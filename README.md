@@ -1676,16 +1676,43 @@ $k['nama_kategori']; ?></option>
 <?= $this->include('template/admin_footer'); ?> 
 ```
 
-# 7.8 Testing 
+# 7.7 Testing 
 Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 • Menampilkan daftar artikel dengan nama kategori.<br> 
-   <img src="/IMAGE/7.8.1.png" img> <br> 
+   Dibawah masing-masing judul `Artikel` nama `Kategori` berhasil ditampilkan sesuai kategori nya.<br> 
+   
+   <img src="/IMAGE/7.7.1.png" img> <br>
+
+   Hasil dari halaman Admin Portal Berita:<br>
+   
+   <img src="/IMAGE/7.7.1'2.png" img> <br>
+   
 • Menambah artikel baru dengan memilih kategori.<br> 
-   <img src="/IMAGE/7.8.2.png" img> <br>
+
+   <img src="/IMAGE/7.7.2.png" img> <br>
+
+   Artikel baru berhasil ditambahkan:<br>
+
+   <img src="/IMAGE/7.7.2'2.png" img> <br>
+   
 • Mengedit artikel dan mengubah kategorinya. <br>
-   <img src="/IMAGE/7.8.3.png" img> <br>
-• Menghapus artikel. 
-   <img src="/IMAGE/7.8.4.png" img> <br>
+    Pada artikel `Tes Tambah Artikel` kita ubah kategori nya dari `umum` manjadi `teknologi`:<br>
+    
+   <img src="/IMAGE/7.7.3.png" img> <br>
+
+   Maka hasilnya:<br>
+
+   <img src="/IMAGE/7.7.3'2.png" img> <br>
+
+• Menghapus artikel.<br> 
+   Sebagai contoh kita akan hapus artikel `Tes Tambah Artikel`. Saat button 'Hapus' diklik maka web akan mengkonfirmasi kembali:
+   
+   <img src="/IMAGE/7.7.4.png" img> <br>
+
+   Maka artikel `Tes Tambah Artikel` berhasil dihapus:<br>
+
+   <img src="/IMAGE/7.7.4'2.png" img> <br>
+
 <br>
 
 # Praktikum 8

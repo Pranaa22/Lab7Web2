@@ -1679,9 +1679,13 @@ $k['nama_kategori']; ?></option>
 # 7.8 Testing 
 Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 • Menampilkan daftar artikel dengan nama kategori.<br> 
+   <img src="/IMAGE/7.8.1.png" img> <br> 
 • Menambah artikel baru dengan memilih kategori.<br> 
+   <img src="/IMAGE/7.8.2.png" img> <br>
 • Mengedit artikel dan mengubah kategorinya. <br>
+   <img src="/IMAGE/7.8.3.png" img> <br>
 • Menghapus artikel. 
+   <img src="/IMAGE/7.8.4.png" img> <br>
 <br>
 
 # Praktikum 8

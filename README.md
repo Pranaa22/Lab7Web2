@@ -1714,6 +1714,113 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 
    <img src="/IMAGE/7.7.4'2.png" img> <br>
 
+# Pertanyaan dan Tugas
+
+**1. Selesaikan semua langkah praktikum di atas.** <br>
+   **Jawab:**  <br>
+      DONE!!
+**2. Modifikasi tampilan detail artikel (artikel/detail.php) untuk menampilkan nama kategori artikel.** <br>
+   **Jawab:**  <br>
+
+   
+**3. Tambahkan fitur untuk menampilkan daftar kategori di halaman depan (opsional).** <br>
+   **Jawab:**  <br>
+   Menambahkan fitur pengelompokkan artikel berdasarkan kategori agar pengguna lebih mudah menelusuri konten sesuai minatnya.<br>
+   Menampilkan daftar kategori (seperti "Umum", "Teknologi") di sidebar halaman utama sebagai navigasi cepat.<br>
+
+   **Langkah Implementasi**
+   
+   **1. Buat Model Kategori**
+   
+   ```php
+   // app/Models/KategoriModel.php
+   namespace App\Models;
+   
+   use CodeIgniter\Model;
+   
+   class KategoriModel extends Model
+   {
+       protected $table = 'kategori';
+       protected $primaryKey = 'id_kategori';
+       protected $allowedFields = ['nama_kategori', 'slug_kategori'];
+   }
+   ```
+   
+  **2. Ambil Data di Controller**
+   
+   Misalnya di Home atau lewat `View Cell`:
+   
+   ```php
+   $kategoriModel = new \App\Models\KategoriModel();
+   $data['kategori'] = $kategoriModel->findAll();
+   return view('home/index', $data);
+   ```
+   
+   **3. Tampilkan di Sidebar View**
+   
+   ```php
+   <!-- view layout/sidebar.php -->
+   <div class="widget-box">
+       <h3 class="title">Daftar Kategori</h3>
+       <ul>
+           <?php foreach ($kategori as $k): ?>
+               <li><a href="<?= base_url('kategori/' . $k['slug_kategori']) ?>">
+                   <?= esc($k['nama_kategori']); ?>
+               </a></li>
+           <?php endforeach; ?>
+       </ul>
+   </div>
+   ```
+   
+
+**4. Buat fungsi untuk menampilkan artikel berdasarkan kategori tertentu (opsional).** <br>
+   **Jawab:**  <br>
+   Saat user klik salah satu kategori, halaman akan menampilkan artikel milik kategori tersebut saja.
+
+   **Langkah Implementasi**
+   
+   **1. Tambahkan Route di `app/Config/Routes.php`**
+   
+   ```php
+   $routes->get('/kategori/(:segment)', 'Artikel::kategori/$1');
+   ```
+   
+   **2. Controller `Artikel::kategori()`**
+   
+   ```php
+   public function kategori($slugKategori)
+   {
+       $title = 'Artikel ' . ucfirst($slugKategori);
+       $model = new \App\Models\ArtikelModel();
+       $artikel = $model->getArtikelDenganKategori(false, $slugKategori);
+   
+       $pager = \Config\Services::pager();
+   
+       return view('artikel/index', [
+           'title' => $title,
+           'artikel' => $artikel,
+           'pager' => $pager
+       ]);
+   }
+   ```
+   
+   **3. Update Method di `ArtikelModel`**
+   
+   ```php
+   public function getArtikelDenganKategori($paginate = false, $slugKategori = null)
+   {
+       $this->select('artikel.*, kategori.nama_kategori, kategori.slug_kategori');
+       $this->join('kategori', 'kategori.id_kategori = artikel.id_kategori', 'left');
+   
+       if ($slugKategori) {
+           $this->where('kategori.slug_kategori', $slugKategori);
+       }
+   
+       return $paginate ? $this->paginate(10) : $this->findAll();
+   }
+   ```
+
+   
 <br>
 
 # Praktikum 8

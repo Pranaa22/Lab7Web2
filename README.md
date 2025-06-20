@@ -1678,7 +1678,8 @@ $k['nama_kategori']; ?></option>
 
 # 7.7 Testing 
 Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
-• Menampilkan daftar artikel dengan nama kategori.<br> 
+
+**• Menampilkan daftar artikel dengan nama kategori.** <br> 
    Dibawah masing-masing judul `Artikel` nama `Kategori` berhasil ditampilkan sesuai kategori nya.<br> 
    
    <img src="/IMAGE/7.7.1.png" img> <br>
@@ -1687,7 +1688,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    
    <img src="/IMAGE/7.7.1'2.png" img> <br>
    
-• Menambah artikel baru dengan memilih kategori.<br> 
+**• Menambah artikel baru dengan memilih kategori.** <br> 
 
    <img src="/IMAGE/7.7.2.png" img> <br>
 
@@ -1695,7 +1696,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 
    <img src="/IMAGE/7.7.2'2.png" img> <br>
    
-• Mengedit artikel dan mengubah kategorinya. <br>
+**• Mengedit artikel dan mengubah kategorinya**. <br>
     Pada artikel `Tes Tambah Artikel` kita ubah kategori nya dari `umum` manjadi `teknologi`:<br>
     
    <img src="/IMAGE/7.7.3.png" img> <br>
@@ -1704,7 +1705,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 
    <img src="/IMAGE/7.7.3'2.png" img> <br>
 
-• Menghapus artikel.<br> 
+**• Menghapus artikel.** <br>
    Sebagai contoh kita akan hapus artikel `Tes Tambah Artikel`. Saat button 'Hapus' diklik maka web akan mengkonfirmasi kembali:
    
    <img src="/IMAGE/7.7.4.png" img> <br>

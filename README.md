@@ -1719,6 +1719,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 **1. Selesaikan semua langkah praktikum di atas.** <br>
    **Jawab:**  <br>
       DONE!!
+      
 **2. Modifikasi tampilan detail artikel (artikel/detail.php) untuk menampilkan nama kategori artikel.** <br>
    **Jawab:**  <br>
 
@@ -1771,6 +1772,10 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
        </ul>
    </div>
    ```
+
+   Sidebar kategori dengan nama `Artikel Terkini` berhasil di Buat: 
+
+   <img src="/IMAGE/tugas7.3.png" img> <br>
    
 
 **4. Buat fungsi untuk menampilkan artikel berdasarkan kategori tertentu (opsional).** <br>
@@ -1820,7 +1825,16 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    }
    ```
 
-   
+   Artikel akan difilter sesuai `kategori` saat diklik.
+   - URL akses:
+   - `/kategori/umum`
+     <img src="/IMAGE/tugas7.4.png" img> <br>
+
+     
+   - `/kategori/teknologi`
+
+     <img src="/IMAGE/tugas7.4'2.png" img> <br>
+     
 <br>
 
 # Praktikum 8

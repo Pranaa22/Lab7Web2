@@ -1706,7 +1706,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    <img src="/IMAGE/7.7.3'2.png" img> <br>
 
 **• Menghapus artikel.** <br>
-   Sebagai contoh kita akan hapus artikel `Tes Tambah Artikel`. Saat button 'Hapus' diklik maka web akan mengkonfirmasi kembali:
+   Sebagai contoh kita akan hapus artikel `Tes Tambah Artikel`. Saat button `Hapus` diklik maka web akan mengkonfirmasi kembali:
    
    <img src="/IMAGE/7.7.4.png" img> <br>
 

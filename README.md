@@ -20,6 +20,7 @@ Tugas: Pemrograman Web 2
 *   **[Praktikum 8](#praktikum-8)**
 *   **[Pertanyaan dan Tugas 8](#pertanyaan-dan-tugas-8)**
 *   **[Praktikum 9](#praktikum-9)**
+*   **[Pertanyaan dan Tugas 9](#pertanyaan-dan-tugas-9)**
 *   **[Praktikum 10](#praktikum-10)**
 *   **[Praktikum 11](#praktikum-11)**
 ---

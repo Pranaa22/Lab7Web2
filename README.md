@@ -1912,7 +1912,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 
    - Buka link ini di browser:
      ```bash
-     https://code.jquery.com/jquery-3.6.0.min.js
+     https://code.jquery.com/jquery-3.6.0.js
      ```
    - Tekan `Ctrl + A` (select all), lalu `Ctrl + C` (copy).<br>
    - Buka text editor (`Notepad`, `VS Code`,`Sublime`, dll).<br>
@@ -2053,6 +2053,8 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    Selesaikan programnya sesuai Langkah-langkah yang ada. Tambahkan fungsi untuk <br> 
    `tambah` dan `ubah data`. Anda boleh melakukan improvisasi. 
 
+Ubah Artikel via AJAX:
+
    **1. Ubah `app/Views/ajax/index.php`** <br>
       Tambahkan form tambah artikel di atas `<table>` (sebelum `<table class="table" id="artikelTable">`).<br>
       Update `index.php`:
@@ -2140,12 +2142,129 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       
       `http://localhost:8080/index.php/ajax`<br>
       Isi form `tambah artikel`: <br>
-      <img src="/IMAGE/tugas8.1.png" img>
-      <br>
+      <img src="/IMAGE/tugas8.1.png" img>  <br>
+      
       Klik Tambah<br>
       Artikel baru langsung muncul di tabel bawahnya tanpa reload:<br>
       <img src="/IMAGE/tugas8.2.png" img>
+
+**Edit Artikel via AJAX:** <br>
+
+   **1. Tambah Input Hidden & Tombol Simpan ke Form** <br>
+      Masih di `app/Views/ajax/index.php`, ubah form `#form-tamba`h jadi siap juga buat edit artikel.<br>
+      Ganti Form-nya jadi:
+      ```html
+      <form id="form-artikel">
+          <input type="hidden" name="id" id="artikel_id">
+          
+          <div class="form-group">
+              <input type="text" name="judul" id="judul" placeholder="Judul Artikel" required>
+          </div>
       
+          <div class="form-group">
+              <textarea name="isi" id="isi" placeholder="Isi Artikel" required></textarea>
+          </div>
+      
+          <div class="form-group">
+              <select name="id_kategori" id="id_kategori" required>
+                  <option value="">-- Pilih Kategori --</option>
+                  <option value="1">Umum</option>
+                  <option value="2">Teknologi</option>
+              </select>
+          </div>
+      
+          <button type="submit" class="btn-primary" id="submitBtn">Tambah</button>
+      </form>
+      ```
+
+   **2. Update JavaScript-nya di bawah `<script>`** <br>
+
+   Masih di file ajax/index.php, update scriptnya kayak gini:
+   ```js
+      // Menambahkan artikel atau update jika id tersedia
+      $('#form-artikel').on('submit', function (e) {
+          e.preventDefault();
+          const id = $('#artikel_id').val();
+          const url = id ? "<?= base_url('ajax/update') ?>" : "<?= base_url('ajax/tambah') ?>";
+          $.ajax({
+              url: url,
+              method: "POST",
+              data: $(this).serialize(),
+              success: function (res) {
+                  if (res.status === 'OK') {
+                      $('#form-artikel')[0].reset();
+                      $('#artikel_id').val('');
+                      $('#submitBtn').text('Tambah');
+                      loadData();
+                  } else {
+                      alert('Gagal menyimpan data');
+                  }
+              }
+          });
+      });
+      
+      // Handle tombol Edit
+      $(document).on('click', '.btn-edit', function () {
+          const id = $(this).data('id');
+          $.get("<?= base_url('ajax/getArtikel/') ?>" + id, function (data) {
+              $('#artikel_id').val(data.id);
+              $('#judul').val(data.judul);
+              $('#isi').val(data.isi);
+              $('#id_kategori').val(data.id_kategori);
+              $('#submitBtn').text('Update');
+          });
+      });
+   ```
+
+   **3. Update Tabel `HTML` agar tombol `Edit` bisa jalan** <br>
+      Masih di fungsi `loadData()` `ajax/index.php` : <br>
+      
+      Ganti tombol ini:
+      ```js
+      html += '<a href="<?= base_url('admin/artikel/edit/') ?>' + row.id + '" class="btn btn-primary">Edit</a>';
+      ```
+      
+      Jadi:
+      ```js
+      html += '<a href="#" class="btn btn-primary btn-edit" data-id="' + row.id + '">Edit</a>';
+      ```
+
+   **4. Tambah Route Baru di `app/Config/Routes.php`** <br>
+      Tambahkan:
+      ```php
+      $routes->get('ajax/getArtikel/(:num)', 'AjaxController::getArtikel/$1');
+      $routes->post('ajax/update', 'AjaxController::update');
+      ```
+
+   **5. Tambahkan 2 Method Baru di AjaxController.php**
+      Tambahkan ini:
+
+      ```php
+      public function getArtikel($id)
+      {
+          $model = new \App\Models\ArtikelModel();
+          $data = $model->find($id);
+          return $this->response->setJSON($data);
+      }
+      
+      public function update()
+      {
+          $model = new \App\Models\ArtikelModel();
+          $id = $this->request->getPost('id');
+      
+          $model->update($id, [
+              'judul'       => $this->request->getPost('judul'),
+              'isi'         => $this->request->getPost('isi'),
+              'id_kategori' => $this->request->getPost('id_kategori')
+          ]);
+      
+          return $this->response->setJSON(['status' => 'OK']);
+      }
+
+      ```
+      
+      
+
 
 
 

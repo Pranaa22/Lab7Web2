@@ -2048,10 +2048,10 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    ```
 # Pertanyaan dan Tugas 
 
-   Selesaikan programnya sesuai Langkah-langkah yang ada. `Tambahkan fungsi untuk<br> 
-   tambah dan ubah data`. Anda boleh melakukan improvisasi. 
+   Selesaikan programnya sesuai Langkah-langkah yang ada. Tambahkan fungsi untuk <br> 
+   `tambah` dan `ubah data`. Anda boleh melakukan improvisasi. 
 
-   **1. Ubah `app/Views/ajax/index.php`**
+   **1. Ubah `app/Views/ajax/index.php`** <br>
       Tambahkan form tambah artikel di atas `<table>` (sebelum `<table class="table" id="artikelTable">`).<br>
       Update `index.php`:
       ```php
@@ -2090,7 +2090,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       </table>
       ```
 
-   **2. Tambah Script AJAX POST di bawah `loadData()`**
+   **2. Tambah Script AJAX POST di bawah `loadData()`** <br>
       Masih di file yang sama `ajax/index.php`, tambahkan ini setelah `loadData();`:
       ```php 
       public function tambah()
@@ -2109,7 +2109,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       }
       ```
 
-   **3. Tambah Fungsi `tambah()` di `AjaxController.php`**
+   **3. Tambah Fungsi `tambah()` di `AjaxController.php`**<br>
       Buka `app/Controllers/AjaxController.php`, tambahkan fungsi ini:
       ```php
       public function tambah()
@@ -2128,20 +2128,20 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       }
       ```
 
-   **4. Tambah Route di `app/Config/Routes.php`**
+   **4. Tambah Route di `app/Config/Routes.php`**<br>
       Tambahkan baris ini:
       ```php
       $routes->post('ajax/tambah', 'AjaxController::tambah');
       ```
       
-   **Lalu Buka:**
+   **Lalu Buka:** <br>
       
       `http://localhost:8080/index.php/ajax`<br>
       Isi form `tambah artikel`: <br>
       <img src="/IMAGE/tugas8.1.png" img>
-
+      <br>
       Klik Tambah<br>
-      Artikel baru langsung muncul di tabel bawahnya tanpa reload:
+      Artikel baru langsung muncul di tabel bawahnya tanpa reload:<br>
       <img src="/IMAGE/tugas8.2.png" img>
       
 

@@ -1910,8 +1910,10 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    pustaka jQuery versi terbaru dari `https://jquery.com` dan ekstrak filenya. 
    Salin file `jquery-3.6.0.min.js` ke folder `public/assets/js`. 
 
-   - Buka link ini di browser:<br>
-     `https://code.jquery.com/jquery-3.6.0.min.js`<br>
+   - Buka link ini di browser:
+     ```bash
+     https://code.jquery.com/jquery-3.6.0.min.js
+     ```
    - Tekan `Ctrl + A` (select all), lalu `Ctrl + C` (copy).<br>
    - Buka text editor (`Notepad`, `VS Code`,`Sublime`, dll).<br>
    - Taruh file itu ke:

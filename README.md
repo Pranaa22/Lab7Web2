@@ -11,11 +11,14 @@ Tugas: Pemrograman Web 2
 *   **[Praktikum 1](#praktikum-1)**
 *   **[Praktikum 2](#praktikum-2)**
 *   **[Praktikum 3](#praktikum-3)**
+*   **[Pertanyaan dan Tugas 3](#pertanyaan-dan-tugas-3)**
 *   **[Praktikum 4](#praktikum-4)**
 *   **[Praktikum 5](#praktikum-5)**
 *   **[Praktikum 6](#praktikum-6)**
 *   **[Praktikum 7](#praktikum-7)**
+*   **[Pertanyaan dan Tugas 7](#pertanyaan-dan-tugas-7)**
 *   **[Praktikum 8](#praktikum-8)**
+*   **[Pertanyaan dan Tugas 8](#pertanyaan-dan-tugas-8)**
 *   **[Praktikum 9](#praktikum-9)**
 *   **[Praktikum 10](#praktikum-10)**
 *   **[Praktikum 11](#praktikum-11)**
@@ -748,7 +751,8 @@ $row['judul'] ?></a></li>
 <img src="/IMAGE/3.4.png" img>
 <br>
 
-# 3.5 Pertanyaan dan Tugas
+# Pertanyaan dan Tugas 3
+
 1. Sesuaikan data dengan praktikum sebelumnya, perlu melakukan perubahan `field` pada 
 database dengan menambahkan tanggal agar dapat mengambil data artikel terbaru.<br>
 **Jawab:** <br>
@@ -1712,7 +1716,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 
    <img src="/IMAGE/7.7.4'2.png" img> <br>
 
-# Pertanyaan dan Tugas
+# Pertanyaan dan Tugas 7
 
 **1. Selesaikan semua langkah praktikum di atas.** <br>
    **Jawab:**  <br>
@@ -2049,7 +2053,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    $routes->delete('ajax/delete/(:num)', 'AjaxController::delete/$1');
    ```
 
-# Pertanyaan dan Tugas 
+# Pertanyaan dan Tugas 8
 
    Selesaikan programnya sesuai Langkah-langkah yang ada. Tambahkan fungsi untuk <br> 
    `tambah` dan `ubah data`. Anda boleh melakukan improvisasi. 

@@ -2048,18 +2048,20 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    $routes->get('ajax/getData', 'AjaxController::getData');
    $routes->delete('ajax/delete/(:num)', 'AjaxController::delete/$1');
    ```
+
 # Pertanyaan dan Tugas 
 
    Selesaikan programnya sesuai Langkah-langkah yang ada. Tambahkan fungsi untuk <br> 
    `tambah` dan `ubah data`. Anda boleh melakukan improvisasi. 
 
-Ubah Artikel via AJAX:
+   **Ubah Artikel via AJAX:**
 
    **1. Ubah `app/Views/ajax/index.php`** <br>
-      Tambahkan form tambah artikel di atas `<table>` (sebelum `<table class="table" id="artikelTable">`).<br>
+      Tambahkan form tambah artikel di atas `<table>` sebelum `<table class="table" id="artikelTable">`.<br>
       Update `index.php`:
-      ```php
-      <!--  Form Tambah Artikel -->
+      
+   ```php
+      // Form Tambah Artikel
       <div class="form-container">
           <h3 class="form-title-inside">Tambah Artikel</h3>
           <form id="form-tambah">
@@ -2080,7 +2082,7 @@ Ubah Artikel via AJAX:
           </form>
       </div>
       
-      <!--  Tabel Artikel -->
+      // Tabel Artikel
       <table class="table" id="artikelTable">
           <thead>
               <tr>
@@ -2092,30 +2094,31 @@ Ubah Artikel via AJAX:
           </thead>
           <tbody></tbody>
       </table>
-      ```
+   ```
 
    **2. Tambah Script AJAX POST di bawah `loadData()`** <br>
       Masih di file yang sama `ajax/index.php`, tambahkan ini setelah `loadData();`:
-      ```php 
-      public function tambah()
-      {
-          $artikel = new \App\Models\ArtikelModel();
-          $slug = url_title($this->request->getPost('judul'), '-', true);
-          
-          $artikel->insert([
-              'judul'       => $this->request->getPost('judul'),
-              'isi'         => $this->request->getPost('isi'),
-              'slug'        => $slug,
-              'id_kategori' => $this->request->getPost('id_kategori')
-          ]);
-      
-          return $this->response->setJSON(['status' => 'OK']);
-      }
-      ```
+     
+   ```php 
+            public function tambah()
+            {
+                $artikel = new \App\Models\ArtikelModel();
+                $slug = url_title($this->request->getPost('judul'), '-', true);
+                
+                $artikel->insert([
+                    'judul'       => $this->request->getPost('judul'),
+                    'isi'         => $this->request->getPost('isi'),
+                    'slug'        => $slug,
+                    'id_kategori' => $this->request->getPost('id_kategori')
+                ]);
+            
+                return $this->response->setJSON(['status' => 'OK']);
+            }
+   ```
 
    **3. Tambah Fungsi `tambah()` di `AjaxController.php`**<br>
       Buka `app/Controllers/AjaxController.php`, tambahkan fungsi ini:
-      ```php
+   ```php
       public function tambah()
       {
           $artikel = new \App\Models\ArtikelModel();
@@ -2130,13 +2133,13 @@ Ubah Artikel via AJAX:
       
           return $this->response->setJSON(['status' => 'OK']);
       }
-      ```
+   ```
 
    **4. Tambah Route di `app/Config/Routes.php`**<br>
       Tambahkan baris ini:
-      ```php
+   ```php
       $routes->post('ajax/tambah', 'AjaxController::tambah');
-      ```
+   ```
       
    **Lalu Buka:** <br>
       
@@ -2151,9 +2154,9 @@ Ubah Artikel via AJAX:
 **Edit Artikel via AJAX:** <br>
 
    **1. Tambah Input Hidden & Tombol Simpan ke Form** <br>
-      Masih di `app/Views/ajax/index.php`, ubah form `#form-tamba`h jadi siap juga buat edit artikel.<br>
+      Masih di `app/Views/ajax/index.php`, ubah form `#form-tambah` jadi siap juga buat edit artikel.<br>
       Ganti Form-nya jadi:
-      ```html
+   ```html
       <form id="form-artikel">
           <input type="hidden" name="id" id="artikel_id">
           
@@ -2175,11 +2178,11 @@ Ubah Artikel via AJAX:
       
           <button type="submit" class="btn-primary" id="submitBtn">Tambah</button>
       </form>
-      ```
+   ```
 
    **2. Update JavaScript-nya di bawah `<script>`** <br>
-
-   Masih di file ajax/index.php, update scriptnya kayak gini:
+      Masih di file `ajax/index.php`, update scriptnya menjadi:
+      
    ```js
       // Menambahkan artikel atau update jika id tersedia
       $('#form-artikel').on('submit', function (e) {
@@ -2218,28 +2221,29 @@ Ubah Artikel via AJAX:
 
    **3. Update Tabel `HTML` agar tombol `Edit` bisa jalan** <br>
       Masih di fungsi `loadData()` `ajax/index.php` : <br>
-      
       Ganti tombol ini:
-      ```js
-      html += '<a href="<?= base_url('admin/artikel/edit/') ?>' + row.id + '" class="btn btn-primary">Edit</a>';
-      ```
       
-      Jadi:
-      ```js
+   ```php
+      html += '<a href="<?= base_url('admin/artikel/edit/') ?>' + row.id + '" class="btn btn-primary">Edit</a>';
+   ```
+   Jadi: 
+   ```php
       html += '<a href="#" class="btn btn-primary btn-edit" data-id="' + row.id + '">Edit</a>';
-      ```
+   ```
+      
 
    **4. Tambah Route Baru di `app/Config/Routes.php`** <br>
       Tambahkan:
-      ```php
+      
+   ```php
       $routes->get('ajax/getArtikel/(:num)', 'AjaxController::getArtikel/$1');
       $routes->post('ajax/update', 'AjaxController::update');
-      ```
+   ```
 
    **5. Tambahkan 2 Method Baru di AjaxController.php**
       Tambahkan ini:
 
-      ```php
+   ```php
       public function getArtikel($id)
       {
           $model = new \App\Models\ArtikelModel();
@@ -2260,7 +2264,7 @@ Ubah Artikel via AJAX:
       
           return $this->response->setJSON(['status' => 'OK']);
       }
-      ```
+   ```
 
    **Tes Fungsi:** <br>
 
@@ -2269,13 +2273,13 @@ Ubah Artikel via AJAX:
       http://localhost:8080/index.php/ajax
       ```
       Hasilnya :
-     <img src="/IMAGE/tugas8.3.png" img>  <br>
+     <img src="/IMAGE/tugas8.3.png" img> <br>
      
    - Klik tombol `Edit` <br>
    - Data artikel langsung muncul di form <br>
      Sebagai contoh saya akan edit artikel dengan judul `Ajax Test Tambah Artikel` beserta kategori nya:  
 
-     <img src="/IMAGE/tugas8.4.png" img>  <br>
+     <img src="/IMAGE/tugas8.4.png" img> <br>
            
    - Ubah lalu klik `Update` <br>
    - `Artikel` berhasil terupdate langsung di `tabel`

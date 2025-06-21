@@ -1918,8 +1918,8 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       ```swift
       /public/assets/js/
       ```
-   -Buat file `jquery-3.6.0.min.js` didalam `/js`
-   -Paste (`Ctrl + V`) kode tadi difile `jquery-3.6.0.min.js`.
+   - Buat file `jquery-3.6.0.min.js` didalam `/js` <br>
+   - Paste (`Ctrl + V`) kode tadi difile `jquery-3.6.0.min.js`.
     
     <img src="/IMAGE/8.1.png" img> <br>
     

@@ -1524,7 +1524,7 @@ find the article.');
 Buka folder `view/artikel` sesuaikan masing-masing view.<br>
 `index.php`:
 
-``` bash
+```php
 <?= $this->include('template/header'); ?> 
      
 <?php if ($artikel): foreach ($artikel as $row): ?> 
@@ -1547,7 +1547,7 @@ $row['judul']; ?>">
 ```
 
 `admin_index.php`: 
-```bash
+```php
 <?= $this->include('template/admin_header'); ?> 
  
 <h2><?= $title; ?></h2> 
@@ -1614,7 +1614,7 @@ base_url('/admin/artikel/delete/' . $row->id); ?>">Hapus</a>
 ```
 
 `form_add.php`:
-```bash
+```php
 <?= $this->include('template/admin_header'); ?> 
      
 <h2><?= $title; ?></h2> 
@@ -1645,7 +1645,7 @@ $k['nama_kategori']; ?></option>
 
 
 `form_edit.php`:
-```bash
+```php
 <?= $this->include('template/admin_header'); ?> 
  
 <h2><?= $title; ?></h2> 

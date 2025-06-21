@@ -1592,11 +1592,9 @@ judul artikel" class="form-control mr-2">
                     <td><?= $row->nama_kategori; ?></td> 
                     <td><?= $row->status; ?></td> 
                     <td> 
-                        <a class="btn btn-sm btn-info" href="<?= 
-base_url('/admin/artikel/edit/' . $row->id); ?>">Ubah</a> 
-                        <a class="btn btn-sm btn-danger" onclick="return 
-confirm('Yakin menghapus data?');" href="<?= 
-base_url('/admin/artikel/delete/' . $row->id); ?>">Hapus</a> 
+                        <a class="btn btn-sm btn-info" href="<?= base_url('/admin/artikel/edit/' . $row->id); ?>">Ubah</a> 
+                        <a class="btn btn-sm btn-danger" onclick="return confirm('Yakin menghapus data?');" href="<?= base_url('/admin/artikel/delete/' . $row->id);>
+                        ">Hapus</a> 
                     </td> 
                 </tr> 
             <?php endforeach; ?> 
@@ -1798,9 +1796,8 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    **Langkah Implementasi**
    
    **1. Buat Model Kategori**
-   
+   File: `app/Models/KategoriModel.php`
    ```php
-   // app/Models/KategoriModel.php
    namespace App\Models;
    
    use CodeIgniter\Model;
@@ -1823,10 +1820,10 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    return view('home/index', $data);
    ```
    
-   **3. Tampilkan di Sidebar View**
-   
+   **3. Tampilkan di Sidebar `View`**
+   Di: `view layout/sidebar.php`
    ```php
-   <!-- view layout/sidebar.php -->
+   
    <div class="widget-box">
        <h3 class="title">Daftar Kategori</h3>
        <ul>
@@ -1857,6 +1854,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    ```
    
    **2. Controller `Artikel::kategori()`**
+   File : `Artikel.php`:
    
    ```php
    public function kategori($slugKategori)
@@ -1892,11 +1890,12 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    ```
 
    Artikel akan difilter sesuai `kategori` saat diklik.
-   - URL akses:
+   
+   - URL akses: <br>
    - `/kategori/umum`
+     
      <img src="/IMAGE/tugas7.4.png" img> <br>
 
-     
    - `/kategori/teknologi`
 
      <img src="/IMAGE/tugas7.4'2.png" img> <br>
@@ -1906,7 +1905,247 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
 # Praktikum 8
 <br>
 
-teks
+# 8.1 Menambahkan Pustaka jQuery. 
+   Kita akan menggunakan pustaka `jQuery` untuk mempermudah proses `AJAX`. Download 
+   pustaka jQuery versi terbaru dari `https://jquery.com` dan ekstrak filenya. 
+   Salin file `jquery-3.6.0.min.js` ke folder `public/assets/js`. 
+
+   - Buka link ini di browser:<br>
+     `https://code.jquery.com/jquery-3.6.0.min.js`<br>
+   - Tekan `Ctrl + A` (select all), lalu `Ctrl + C` (copy).<br>
+   - Buka text editor (`Notepad`, `VS Code`,`Sublime`, dll).<br>
+   - Taruh file itu ke:
+      ```swift
+      /public/assets/js/
+      ```
+   -Buat file `jquery-3.6.0.min.js` didalam `/js`
+   -Paste (`Ctrl + V`) kode tadi difile `jquery-3.6.0.min.js`.
+    
+    <img src="/IMAGE/8.1.png" img> <br>
+    
+# 8.2 Membuat AJAX Controller.
+   Pada modul sebelumnya sudah dibuat `ArtikelModel`, pada modul ini kita akan<br> 
+   memanfaatkan model tersebut agar dapat diakses melalui `AJAX`. <br>
+   Buat Controller Baru: `AjaxController.php`. Buat didalam `app/Controllers/AjaxController.php`:<br>
+   ```php
+   <?php
+   
+   namespace App\Controllers;
+   
+   use CodeIgniter\Controller;
+   use App\Models\ArtikelModel;
+   
+   class AjaxController extends Controller
+   {
+
+       public function index()
+      {
+          $title = 'Daftar Artikel (AJAX)';
+          return view('ajax/index', compact('title'));
+      }
+
+   
+       public function getData()
+       {
+           $model = new ArtikelModel();
+           $data = $model->select('artikel.*, kategori.nama_kategori')
+                         ->join('kategori', 'kategori.id_kategori = artikel.id_kategori', 'left')
+                         ->findAll();
+   
+           return $this->response->setJSON($data);
+       }
+   
+       public function delete($id)
+       {
+           $model = new ArtikelModel();
+           $model->delete($id);
+   
+           return $this->response->setJSON(['status' => 'OK']);
+       }
+   }
+   ```
+
+# 8.3 Buat View: `app/Views/ajax/index.php`
+   Buat folder baru didalam `Views` dengan nama `ajax` dan tambahkan file `index.php` <br>
+   lalu isi:
+   
+   ```php
+   <?= $this->include('template/admin_header'); ?>
+   
+   <h2 class="sub-judul">Daftar Artikel (AJAX)</h2>
+   <hr>
+   
+   <table class="table" id="artikelTable">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Judul</th>
+               <th>Kategori</th>
+               <th>Aksi</th>
+           </tr>
+       </thead>
+       <tbody></tbody>
+   </table>
+   
+   <script src="<?= base_url('assets/js/jquery-3.6.0.min.js') ?>"></script>
+   <script>
+       $(document).ready(function () {
+           function loadData() {
+               $('#artikelTable tbody').html('<tr><td colspan="4">Loading...</td></tr>');
+               $.ajax({
+                   url: "<?= base_url('ajax/getData') ?>",
+                   method: "GET",
+                   dataType: "json",
+                   success: function (data) {
+                       let html = '';
+                       data.forEach(function (row) {
+                           html += '<tr>';
+                           html += '<td>' + row.id + '</td>';
+                           html += '<td>' + row.judul + '</td>';
+                           html += '<td>' + (row.nama_kategori || '-') + '</td>';
+                           html += '<td>';
+                           html += '<a href="<?= base_url('admin/artikel/edit/') ?>' + row.id + '" class="btn btn-primary">Edit</a> ';
+                           html += '<a href="#" class="btn btn-danger btn-delete" data-id="' + row.id + '">Hapus</a>';
+                           html += '</td></tr>';
+                       });
+                       $('#artikelTable tbody').html(html);
+                   }
+               });
+           }
+   
+           loadData();
+   
+           $(document).on('click', '.btn-delete', function (e) {
+               e.preventDefault();
+               const id = $(this).data('id');
+               if (confirm('Yakin ingin menghapus artikel ini?')) {
+                   $.ajax({
+                       url: "<?= base_url('ajax/delete/') ?>" + id,
+                       method: "DELETE",
+                       success: function () {
+                           loadData();
+                       },
+                       error: function () {
+                           alert('Gagal menghapus artikel.');
+                       }
+                   });
+               }
+           });
+       });
+   </script>
+   
+   <?= $this->include('template/admin_footer'); ?>
+   ```
+
+# 8.4 Tambah Route di `app/Config/Routes.php`
+
+   Tambah:
+   
+   ```php
+   $routes->get('ajax', 'AjaxController::index');
+   $routes->get('ajax/getData', 'AjaxController::getData');
+   $routes->delete('ajax/delete/(:num)', 'AjaxController::delete/$1');
+   ```
+# Pertanyaan dan Tugas 
+
+   Selesaikan programnya sesuai Langkah-langkah yang ada. `Tambahkan fungsi untuk<br> 
+   tambah dan ubah data`. Anda boleh melakukan improvisasi. 
+
+   **1. Ubah `app/Views/ajax/index.php`**
+      Tambahkan form tambah artikel di atas `<table>` (sebelum `<table class="table" id="artikelTable">`).<br>
+      Update `index.php`:
+      ```php
+      <!--  Form Tambah Artikel -->
+      <div class="form-container">
+          <h3 class="form-title-inside">Tambah Artikel</h3>
+          <form id="form-tambah">
+              <div class="form-group">
+                  <input type="text" name="judul" placeholder="Judul Artikel" required>
+              </div>
+              <div class="form-group">
+                  <textarea name="isi" placeholder="Isi Artikel" required></textarea>
+              </div>
+              <div class="form-group">
+                  <select name="id_kategori" required>
+                      <option value="">-- Pilih Kategori --</option>
+                      <option value="1">Umum</option>
+                      <option value="2">Teknologi</option>
+                  </select>
+              </div>
+              <button type="submit" class="btn-primary">Tambah</button>
+          </form>
+      </div>
+      
+      <!--  Tabel Artikel -->
+      <table class="table" id="artikelTable">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Judul</th>
+                  <th>Kategori</th>
+                  <th>Aksi</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+      ```
+
+   **2. Tambah Script AJAX POST di bawah `loadData()`**
+      Masih di file yang sama `ajax/index.php`, tambahkan ini setelah `loadData();`:
+      ```php 
+      public function tambah()
+      {
+          $artikel = new \App\Models\ArtikelModel();
+          $slug = url_title($this->request->getPost('judul'), '-', true);
+          
+          $artikel->insert([
+              'judul'       => $this->request->getPost('judul'),
+              'isi'         => $this->request->getPost('isi'),
+              'slug'        => $slug,
+              'id_kategori' => $this->request->getPost('id_kategori')
+          ]);
+      
+          return $this->response->setJSON(['status' => 'OK']);
+      }
+      ```
+
+   **3. Tambah Fungsi `tambah()` di `AjaxController.php`**
+      Buka `app/Controllers/AjaxController.php`, tambahkan fungsi ini:
+      ```php
+      public function tambah()
+      {
+          $artikel = new \App\Models\ArtikelModel();
+          $slug = url_title($this->request->getPost('judul'), '-', true);
+          
+          $artikel->insert([
+              'judul'       => $this->request->getPost('judul'),
+              'isi'         => $this->request->getPost('isi'),
+              'slug'        => $slug,
+              'id_kategori' => $this->request->getPost('id_kategori')
+          ]);
+      
+          return $this->response->setJSON(['status' => 'OK']);
+      }
+      ```
+
+   **4. Tambah Route di `app/Config/Routes.php`**
+      Tambahkan baris ini:
+      ```php
+      $routes->post('ajax/tambah', 'AjaxController::tambah');
+      ```
+      
+   **Lalu Buka:**
+      
+      `http://localhost:8080/index.php/ajax`<br>
+      Isi form `tambah artikel`: <br>
+      <img src="/IMAGE/tugas8.1.png" img>
+
+      Klik Tambah<br>
+      Artikel baru langsung muncul di tabel bawahnya tanpa reload:
+      <img src="/IMAGE/tugas8.2.png" img>
+      
+
+
 
 # Praktikum 9
 <br>

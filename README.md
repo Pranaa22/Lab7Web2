@@ -1722,8 +1722,74 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
       
 **2. Modifikasi tampilan detail artikel (artikel/detail.php) untuk menampilkan nama kategori artikel.** <br>
    **Jawab:**  <br>
-
    
+   **• Di `app/Controllers/Artikel.php`, method `view()` ubah menjadi:**
+   
+   ```php
+   public function view($slug)
+    {
+        $model = new \App\Models\ArtikelModel();
+
+        // Gunakan getArtikelDenganKategori() untuk ambil info kategori juga
+        $artikel = $model->select('artikel.*, kategori.nama_kategori')
+                        ->join('kategori', 'kategori.id_kategori = artikel.id_kategori', 'left')
+                        ->where('slug', $slug)
+                        ->first();
+
+        if (!$artikel) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        $title = $artikel['judul'];
+        return view('artikel/detail', compact('artikel', 'title'));
+    }
+   ```
+
+   **• Edit Tampilan `app/Views/artikel/detail.php`**
+   
+   update file `detail.php` menjadi:<br>
+   ```php
+      <?= $this->include('template/header'); ?> 
+   
+   <article class="entry"> 
+       <h2><?= esc($artikel['judul']); ?></h2> 
+   
+       <!-- Menampilkan nama kategori -->
+       <?php if (!empty($artikel['nama_kategori'])): ?>
+           <p class="kategori-label">Kategori: <?= esc($artikel['nama_kategori']); ?></p>
+       <?php endif; ?>
+   
+       <!-- Gambar Artikel -->
+       <?php if (!empty($artikel['gambar'])): ?>
+           <img src="<?= base_url('/gambar/' . $artikel['gambar']); ?>" alt="<?= esc($artikel['judul']); ?>"> 
+       <?php endif; ?>
+   
+       <!-- Isi Artikel -->
+       <p><?= esc($artikel['isi']); ?></p>
+   </article> 
+   
+   <?= $this->include('template/footer'); ?> 
+   ```
+
+   **• Tambahkan CSS**
+   
+   Di `style.css`:
+   ```css
+   .kategori-label {
+       display: inline-block;
+       background-color: #e8f0fe;
+       color: #2a6ebd;
+       font-size: 13px;
+       font-weight: bold;
+       padding: 5px 10px;
+       border-radius: 20px;
+       margin: 10px 0 20px 0;
+   }
+   ```
+   **Maka hasil halaman detail artikel (misalnya: localhost:8080/artikel/artikel-pertama):**
+   
+   <img src="/IMAGE/tugas7.2.png" img> <br>
+
 **3. Tambahkan fitur untuk menampilkan daftar kategori di halaman depan (opsional).** <br>
    **Jawab:**  <br>
    Menambahkan fitur pengelompokkan artikel berdasarkan kategori agar pengguna lebih mudah menelusuri konten sesuai minatnya.<br>

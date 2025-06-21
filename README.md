@@ -2260,8 +2260,29 @@ Ubah Artikel via AJAX:
       
           return $this->response->setJSON(['status' => 'OK']);
       }
-
       ```
+
+   **Tes Fungsi:** <br>
+
+   - Akses:
+      ```bash
+      http://localhost:8080/index.php/ajax
+      ```
+      Hasilnya :
+     <img src="/IMAGE/tugas8.3.png" img>  <br>
+     
+   - Klik tombol `Edit` <br>
+   - Data artikel langsung muncul di form <br>
+     Sebagai contoh saya akan edit artikel dengan judul `Ajax Test Tambah Artikel` beserta kategori nya:  
+
+     <img src="/IMAGE/tugas8.4.png" img>  <br>
+           
+   - Ubah lalu klik `Update` <br>
+   - `Artikel` berhasil terupdate langsung di `tabel`
+     
+      <img src="/IMAGE/tugas8.5.png" img>  <br>
+     
+     
       
       
 

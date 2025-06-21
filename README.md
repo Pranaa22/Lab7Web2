@@ -2372,8 +2372,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    
    <?= $this->include('template/admin_footer'); ?>
    ```
-      
-
+   
    **4. Tambah Route Baru di `app/Config/Routes.php`** <br>
       Tambahkan:
       
@@ -2426,19 +2425,244 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
    - Ubah lalu klik `Update` <br>
    - `Artikel` berhasil terupdate langsung di `tabel`
      
-      <img src="/IMAGE/tugas8.5.png" img>  <br>
+      <img src="/IMAGE/tugas8.5.png" img>
+      <br>
      
-     
-      
-      
-
-
-
-
 # Praktikum 9
 <br>
 
-teks
+# 9.1 Modifikasi Controller Artikel 
+
+   Ubah method `admin_index()` di `Artikel.php` untuk mengembalikan data dalam format<br> 
+JSON jika request adalah `AJAX`. (Sama seperti modul sebelumnya)<br> 
+Pada file: `app/Controllers/Artikel.php`<br> 
+Ganti method `admin_index()`:
+```php
+public function admin_index()
+{
+    $title = 'Daftar Artikel (Admin)';
+    $model = new \App\Models\ArtikelModel();
+
+    $q = $this->request->getVar('q') ?? '';
+    $kategori_id = $this->request->getVar('kategori_id') ?? '';
+    $page = $this->request->getVar('page') ?? 1;
+
+    $builder = $model->table('artikel')
+        ->select('artikel.*, kategori.nama_kategori')
+        ->join('kategori', 'kategori.id_kategori = artikel.id_kategori');
+
+    if ($q != '') {
+        $builder->like('artikel.judul', $q);
+    }
+
+    if ($kategori_id != '') {
+        $builder->where('artikel.id_kategori', $kategori_id);
+    }
+
+    $artikel = $builder->paginate(10, 'default', $page);
+    $pager = $model->pager;
+
+    $data = [
+        'title' => $title,
+        'q' => $q,
+        'kategori_id' => $kategori_id,
+        'artikel' => $artikel,
+        'pager' => $pager
+    ];
+
+    if ($this->request->isAJAX()) {
+        return $this->response->setJSON($data);
+    } else {
+        $kategoriModel = new \App\Models\KategoriModel();
+        $data['kategori'] = $kategoriModel->findAll();
+        return view('artikel/admin_index', $data);
+    }
+}
+```
+
+# 9.2 Modifikasi View `admin_index.php` 
+   
+   - Ubah view `admin_index.php` untuk menggunakan jQuery.<br> 
+   - Hapus kode yang menampilkan tabel artikel dan pagination secara langsung.<br> 
+   - Tambahkan elemen untuk menampilkan data artikel dan pagination dari AJAX.<br> 
+   - Tambahkan kode jQuery untuk melakukan request AJAX.<br>
+   
+Pada file: `app/Views/artikel/admin_index.php`<br>
+Ganti seluruh isinya dengan:<br>
+```php
+<?= $this->include('template/admin_header'); ?>
+
+<h2><?= $title; ?></h2>
+
+<div class="form-container">
+    <form id="search-form" class="form-inline">
+        <input type="text" name="q" id="search-box" value="<?= esc($q); ?>" placeholder="Cari judul artikel" class="form-control" style="margin-right: 10px; padding: 8px;">
+        
+        <select name="kategori_id" id="category-filter" class="form-control" style="margin-right: 10px;">
+            <option value="">Semua Kategori</option>
+            <?php foreach ($kategori as $k): ?>
+                <option value="<?= $k['id_kategori']; ?>" <?= ($kategori_id == $k['id_kategori']) ? 'selected' : ''; ?>>
+                    <?= $k['nama_kategori']; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <input type="submit" value="Cari" class="btn btn-primary">
+    </form>
+</div>
+
+<!-- Loader -->
+<div id="loading" style="display: none; margin-top: 10px;">
+    <p>Memuat data...</p>
+</div>
+
+<!-- Tampilkan Artikel -->
+<div id="article-container" style="margin-top: 20px;"></div>
+
+<!-- Pagination -->
+<div id="pagination-container" style="margin-top: 20px;"></div>
+
+<!-- jQuery -->
+<script src="<?= base_url('assets/js/jquery-3.6.0.min.js'); ?>"></script>
+<script>
+    $(document).ready(function () {
+        const articleContainer = $('#article-container');
+        const paginationContainer = $('#pagination-container');
+        const searchForm = $('#search-form');
+        const searchBox = $('#search-box');
+        const categoryFilter = $('#category-filter');
+        const loading = $('#loading');
+
+        const fetchData = (url) => {
+            loading.show(); // indikator loading tampil
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                success: function (data) {
+                    renderArticles(data.artikel);
+                    renderPagination(data.pager, data.q, data.kategori_id);
+                    loading.hide(); // sembunyikan loading
+                }
+            });
+        };
+
+        const renderArticles = (articles) => {
+            let html = '<table class="table">';
+            html += '<thead><tr><th>ID</th><th>Judul</th><th>Kategori</th><th>Status</th><th>Aksi</th></tr></thead><tbody>';
+            if (articles.length > 0) {
+                articles.forEach(article => {
+                    html += `
+                        <tr>
+                            <td>${article.id}</td>
+                            <td>
+                                <b>${article.judul}</b>
+                                <p><small>${article.isi.substring(0, 50)}...</small></p>
+                            </td>
+                            <td>${article.nama_kategori}</td>
+                            <td>${article.status}</td>
+                            <td>
+                                <a class="btn btn-sm btn-info" href="/admin/artikel/edit/${article.id}">Ubah</a>
+                                <a class="btn btn-sm btn-danger" onclick="return confirm('Yakin menghapus data?');" href="/admin/artikel/delete/${article.id}">Hapus</a>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                html += '<tr><td colspan="5">Tidak ada data.</td></tr>';
+            }
+            html += '</tbody></table>';
+            articleContainer.html(html);
+        };
+
+        const renderPagination = (pager, q, kategori_id) => {
+            let html = '<nav><ul class="pagination">';
+            pager.links.forEach(link => {
+                const url = link.url ? `${link.url}&q=${q}&kategori_id=${kategori_id}` : '#';
+                html += `<li class="page-item ${link.active ? 'active' : ''}"><a class="page-link" href="${url}">${link.title}</a></li>`;
+            });
+            html += '</ul></nav>';
+            paginationContainer.html(html);
+        };
+
+        searchForm.on('submit', function (e) {
+            e.preventDefault();
+            const q = searchBox.val();
+            const kategori_id = categoryFilter.val();
+            fetchData(`/admin/artikel?q=${q}&kategori_id=${kategori_id}`);
+        });
+
+        categoryFilter.on('change', function () {
+            searchForm.trigger('submit');
+        });
+
+        // Initial load
+        fetchData('/admin/artikel');
+    });
+</script>
+
+<?= $this->include('template/admin_footer'); ?>
+```
+
+Tampilan dari halaman `http://localhost:8080/index.php/admin/artikel`
+
+<img src="/IMAGE/9.1.png" img>
+
+# Pertanyaan dan Tugas 9
+
+**1. Selesaikan semua langkah praktikum di atas.** <br>
+**Jawab:**
+DONE!!
+
+**2. Modifikasi tampilan data artikel dan pagination sesuai kebutuhan desain.** <br>
+**Jawab:**
+
+**Mengubah tampilan daftar artikel di halaman admin `admin_index.php` agar:** <br>
+- Setiap baris artikel tampil lebih rapi (misal: bold judul, isi ringkasan ditampilkan kecil).<br>
+- Menggunakan class `Bootstrap` / `CSS` untuk `table` dan tombol.<br>
+
+**Pada `admin_index.php` ubah baris:**
+
+```php
+<td>
+   <b>${article.judul}</b>
+   <p><small>${article.isi.substring(0, 50)}...</small></p>
+</td>
+```
+Menjadi:
+```php
+<td>
+  <strong>${article.judul}</strong><br>
+  <small>${article.isi.substring(0, 50)}...</small>
+</td>
+```
+**Dan pada bagian `pagination` dari:**
+
+```php
+<div id="pagination-container" style="margin-top: 20px;"></div>
+```
+Menjadi:
+```php
+<div class="pagination-container" style="margin-top: 20px;">
+  <?= $pager->links() ?>
+</div>
+```
+
+<img src="/IMAGE/tugas9.2.png" img>
+  
+**3. Tambahkan indikator loading saat data sedang diambil dari server.** <br>
+**Jawab:**
+
+**Menambahkan elemen `#loading`:**
+
+
+**4. Implementasikan fitur sorting (mengurutkan artikel berdasarkan judul, dll.) dengan `AJAX`.** <br>
+**Jawab:**
+
+
 
 # Praktikum 10
 <br>

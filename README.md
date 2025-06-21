@@ -1786,7 +1786,7 @@ Lakukan uji coba untuk memastikan semua fungsi berjalan dengan baik:<br>
        margin: 10px 0 20px 0;
    }
    ```
-   **Maka hasil halaman detail artikel (misalnya: localhost:8080/artikel/artikel-pertama):**
+   **Maka hasil halaman detail artikel (misalnya: `localhost:8080/artikel/artikel-pertama`):**
    
    <img src="/IMAGE/tugas7.2.png" img> <br>
 

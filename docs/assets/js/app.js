@@ -1,5 +1,5 @@
 const { createApp } = Vue;
-const apiUrl = ' https://4168-36-50-112-76-subdomain.ngrok.io/lab11_ci/ci4/public';
+const apiUrl = ' https://4168-36-50-112-76-subdomain.ngrok.io/ci4/public';
 
 createApp({
   data() {

@@ -7,7 +7,7 @@ Tugas: Pemrograman Web 2
 
 # Daftar Isi Praktikum
 
-[Coba disini](https://pranaa22.github.io/Lab7Web2/)
+[Visit Site](https://pranaa22.github.io/Lab7Web2/)
 
 - **[Praktikum 1](#praktikum-1)**
 - **[Praktikum 2](#praktikum-2)**

@@ -1,0 +1,2014 @@
+ERROR - 2025-06-20 00:05:56 --> mysqli_sql_exception: Table 'lab_ci4.artikel' doesn't exist in engine in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(15): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 00:05:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lab_ci4.artikel' doesn't exist in engine
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(15): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 00:05:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lab_ci4.artikel' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(15): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 00:05:56 --> [Caused by] mysqli_sql_exception: Table 'lab_ci4.artikel' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(15): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 03:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 03:01:11 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\User->login()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\User->login()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-06-20 03:01:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: POST, Route: user/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `useremail` = :useremail:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 03:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 03:02:08 --> mysqli_sql_exception: Table 'lab_ci4.user' doesn't exist in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\User->login()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-20 03:02:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lab_ci4.user' doesn't exist
+[Method: POST, Route: user/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `useremail` = :useremail:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 03:02:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lab_ci4.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `user`
+WHERE `useremail` = \'admin@email.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `user`
+WHERE `useremail` = \'admin@email.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `useremail` = :useremail:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 03:02:08 --> [Caused by] mysqli_sql_exception: Table 'lab_ci4.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `user`
+WHERE `useremail` = \'admin@email.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `user`
+WHERE `useremail` = \'admin@email.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `user`
+WHERE `useremail` = \'admin@email.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `useremail` = :useremail:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 03:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 03:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 05:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 05:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 05:50:40 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MyxaSQLi"
+[Method: POST, Route: user/login]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MyxaSQLi')
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\User.php(28): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 05:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 05:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 05:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:14:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 06:38:43 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 06:38:43 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE :judul: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:38:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE \'%%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE \'%%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE :judul: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:38:43 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE \'%%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE \'%%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE \'%%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE :judul: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 06:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 06:44:28 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'lab_ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-20 06:44:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE :judul: ESCAPE \'!\'', [...], false)
+ 3 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 4 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 5 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 6 APPPATH\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 06:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 06:44:51 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'lab_ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-06-20 06:44:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `judul` LIKE :judul: ESCAPE \'!\'', [...], false)
+ 3 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 4 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 5 APPPATH\Models\ArtikelModel.php(27): CodeIgniter\BaseModel->paginate(10)
+ 6 APPPATH\Controllers\Artikel.php(50): App\Models\ArtikelModel->getArtikelDenganKategori(true)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->admin_index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 06:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 06:46:55 --> Error: Call to a member function withErrors() on string
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Controllers\Artikel.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 06:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 06:47:00 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/3]
+in APPPATH\Controllers\Artikel.php on line 35.
+ 1 APPPATH\Controllers\Artikel.php(139): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('3')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 06:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 06:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 06:53:08 --> mysqli_sql_exception: Unknown column 'kategori' in 'field list' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `kategor...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategor...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategor...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategor...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', Array, 'App\\Cells\\Artik...')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\Artik...', Array, 0, 'AppCellsArtikel...')
+#10 C:\xampp\htdocs\lab11_ci\ci4\app\Views\layout\main.php(28): view_cell('App\\Cells\\Artik...')
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(240): CodeIgniter\View\View->render('layout/main', Array, true)
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1173): CodeIgniter\View\View->render('artikel/index', Array, true)
+#15 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(18): view('artikel/index', Array)
+#16 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#17 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#18 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#19 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#20 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#21 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#22 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#23 {main}
+CRITICAL - 2025-06-20 06:53:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori' in 'field list'
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 6 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 7 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 8 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+ 9 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+10 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+12 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+13 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+15 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+16 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:53:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 8 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 9 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+10 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+11 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+12 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+13 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+14 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+15 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+16 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+17 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+18 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+22 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:53:08 --> [Caused by] mysqli_sql_exception: Unknown column 'kategori' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 9 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+10 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+11 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+12 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+13 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+14 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+15 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+16 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+17 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+18 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+19 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+23 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+ERROR - 2025-06-20 06:54:23 --> mysqli_sql_exception: Unknown column 'kategori' in 'field list' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `kategor...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategor...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategor...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategor...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', Array, 'App\\Cells\\Artik...')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\Artik...', Array, 0, 'AppCellsArtikel...')
+#10 C:\xampp\htdocs\lab11_ci\ci4\app\Views\layout\main.php(28): view_cell('App\\Cells\\Artik...')
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(240): CodeIgniter\View\View->render('layout/main', Array, true)
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1173): CodeIgniter\View\View->render('artikel/index', Array, true)
+#15 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(18): view('artikel/index', Array)
+#16 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#17 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#18 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#19 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#20 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#21 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#22 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#23 {main}
+CRITICAL - 2025-06-20 06:54:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori' in 'field list'
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 6 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 7 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 8 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+ 9 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+10 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+12 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+13 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+15 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+16 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:54:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kategori' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 8 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 9 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+10 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+11 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+12 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+13 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+14 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+15 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+16 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+17 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+18 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+22 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 06:54:23 --> [Caused by] mysqli_sql_exception: Unknown column 'kategori' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `kategori`
+FROM `artikel`
+GROUP BY `kategori`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Cells\ArtikelTerkini.php(16): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 9 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+10 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+11 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+12 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+13 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+14 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+15 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+16 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+17 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+18 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+19 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+23 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 07:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-20 07:09:56 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:09:56 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:10:12 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:10:12 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 07:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-20 07:10:25 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:10:25 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 07:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-20 07:21:45 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:21:45 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:23:54 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:23:54 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 07:25:12 --> CodeIgniter\View\Exceptions\ViewException: App\Cells\ArtikelTerkini::render is not a valid method.
+[Method: GET, Route: artikel]
+in SYSTEMPATH\View\Cell.php on line 99.
+ 1 SYSTEMPATH\View\Cell.php(99): CodeIgniter\View\Exceptions\ViewException::forInvalidCellMethod('App\\Cells\\ArtikelTerkini', 'render')
+ 2 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 3 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 8 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:25:20 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 07:25:20 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 10:40:57 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 10:40:57 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 10:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 10:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 10:41:31 --> Error: Call to a member function withErrors() on string
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Controllers\Artikel.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 10:41:34 --> [DEPRECATED] urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 6.
+ 1 APPPATH\Views\components\artikel_terkini.php(6): urlencode(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+WARNING - 2025-06-20 10:41:34 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Views\components\artikel_terkini.php on line 7.
+ 1 APPPATH\Views\components\artikel_terkini.php(7): ucfirst(null)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\components\\artikel_terkini.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('components/artikel_terkini', [], true)
+ 5 APPPATH\Cells\ArtikelTerkini.php(18): view('components/artikel_terkini', [...])
+ 6 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->render()
+ 7 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'render', [], 'App\\Cells\\ArtikelTerkini')
+ 8 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 9 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+10 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+11 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+14 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+21 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 10:53:43 --> Error: Class "App\Cells\KategoriModel" not found
+[Method: GET, Route: artikel]
+in APPPATH\Cells\ArtikelTerkini.php on line 11.
+ 1 SYSTEMPATH\View\Cell.php(283): App\Cells\ArtikelTerkini->show()
+ 2 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'show', [], 'App\\Cells\\ArtikelTerkini')
+ 3 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::show', [], 0, 'AppCellsArtikelTerkinishow40cd750bba9870f18aada2478b24840a')
+ 4 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::show')
+ 5 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 9 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:06:39 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: kategori/umum]
+in APPPATH\Views\artikel\index.php on line 19.
+ 1 APPPATH\Views\artikel\index.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 19)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(27): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:07:51 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: kategori/umum]
+in APPPATH\Views\artikel\index.php on line 19.
+ 1 APPPATH\Views\artikel\index.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 19)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(27): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:09:37 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: kategori/umum]
+in APPPATH\Views\artikel\index.php on line 19.
+ 1 APPPATH\Views\artikel\index.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 19)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(27): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:23:41 --> ErrorException: Undefined array key "nama_kategori"
+[Method: GET, Route: kategori/teknologi]
+in APPPATH\Views\artikel\index.php on line 12.
+ 1 APPPATH\Views\artikel\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(29): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:23:45 --> ErrorException: Undefined array key "nama_kategori"
+[Method: GET, Route: kategori/umum]
+in APPPATH\Views\artikel\index.php on line 12.
+ 1 APPPATH\Views\artikel\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(29): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 11:23:50 --> ErrorException: Undefined array key "nama_kategori"
+[Method: GET, Route: kategori/umum]
+in APPPATH\Views\artikel\index.php on line 12.
+ 1 APPPATH\Views\artikel\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kategori"', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(29): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 11:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 11:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 11:35:08 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/3]
+in APPPATH\Controllers\Artikel.php on line 39.
+ 1 APPPATH\Controllers\Artikel.php(143): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('3')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 11:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 11:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 11:53:47 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/3]
+in APPPATH\Controllers\Artikel.php on line 39.
+ 1 APPPATH\Controllers\Artikel.php(143): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('3')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 11:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 12:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 12:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 12:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 12:54:31 --> ErrorException: Undefined variable $warna
+[Method: GET, Route: artikel]
+in APPPATH\Views\artikel\index.php on line 12.
+ 1 APPPATH\Views\artikel\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $warna', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 12:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 12:58:28 --> ErrorException: Undefined variable $warna
+[Method: GET, Route: artikel]
+in APPPATH\Views\artikel\index.php on line 12.
+ 1 APPPATH\Views\artikel\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $warna', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 5 APPPATH\Controllers\Artikel.php(18): view('artikel/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 12:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 12:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 12:59:14 --> Error: Call to a member function withErrors() on string
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Controllers\Artikel.php on line 96.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 12:59:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 12:59:19 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/1]
+in APPPATH\Controllers\Artikel.php on line 38.
+ 1 APPPATH\Controllers\Artikel.php(141): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:00:56 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/1]
+in APPPATH\Controllers\Artikel.php on line 38.
+ 1 APPPATH\Controllers\Artikel.php(141): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:01:03 --> Error: Call to a member function withErrors() on string
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Controllers\Artikel.php on line 96.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:01:53 --> Error: Class "App\Controllers\PageNotFoundException" not found
+[Method: GET, Route: admin/artikel/edit/1]
+in APPPATH\Controllers\Artikel.php on line 38.
+ 1 APPPATH\Controllers\Artikel.php(141): App\Controllers\Artikel->view('artikel/form_edit', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->edit('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:05:55 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Views\artikel\form_add.php on line 26.
+ 1 APPPATH\Views\artikel\form_add.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/form_add', [], true)
+ 5 APPPATH\Controllers\Artikel.php(96): view('artikel/form_add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:10:40 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Views\artikel\form_add.php on line 28.
+ 1 APPPATH\Views\artikel\form_add.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php', 28)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/form_add', [], true)
+ 5 APPPATH\Controllers\Artikel.php(96): view('artikel/form_add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:10:44 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Views\artikel\form_add.php on line 28.
+ 1 APPPATH\Views\artikel\form_add.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php', 28)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/form_add', [], true)
+ 5 APPPATH\Controllers\Artikel.php(96): view('artikel/form_add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 13:12:19 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/artikel/add]
+in APPPATH\Views\artikel\form_add.php on line 28.
+ 1 APPPATH\Views\artikel\form_add.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php', 28)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\form_add.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/form_add', [], true)
+ 5 APPPATH\Controllers\Artikel.php(97): view('artikel/form_add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->add()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 13:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 13:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 16:08:26 --> mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 16:08:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+[Method: GET, Route: kategori/umum]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:08:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:08:26 --> [Caused by] mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+ERROR - 2025-06-20 16:08:29 --> mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 16:08:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+[Method: GET, Route: kategori/teknologi]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:08:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:08:29 --> [Caused by] mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 16:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-20 16:11:40 --> mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 16:11:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+[Method: GET, Route: kategori/umum]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:40 --> [Caused by] mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+ERROR - 2025-06-20 16:11:42 --> mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 16:11:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+[Method: GET, Route: kategori/teknologi]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:42 --> [Caused by] mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'teknologi\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'teknologi')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('teknologi')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+ERROR - 2025-06-20 16:11:45 --> mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-06-20 16:11:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+[Method: GET, Route: kategori/umum]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 5 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 7 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 16:11:45 --> [Caused by] mysqli_sql_exception: Unknown column 'artikel.kategori' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = \'umum\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `artikel`
+LEFT JOIN `kategori` ON `kategori`.`id_kategori` = `artikel`.`id_kategori`
+WHERE `artikel`.`kategori` = :artikel.kategori:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Models\ArtikelModel.php(26): CodeIgniter\BaseModel->paginate(10)
+ 8 APPPATH\Controllers\Artikel.php(26): App\Models\ArtikelModel->getArtikelDenganKategori(true, 'umum')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->kategori('umum')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 16:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 16:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 17:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-20 17:34:43 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: artikel/artikel-pertama]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\artikel\detail.php(10): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/detail', [], true)
+ 5 APPPATH\Controllers\Artikel.php(53): view('artikel/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->view('artikel-pertama')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 17:34:50 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: artikel/artikel-pertama]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\artikel\detail.php(10): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/detail', [], true)
+ 5 APPPATH\Controllers\Artikel.php(53): view('artikel/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->view('artikel-pertama')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-20 17:34:52 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: artikel/artikel-kedua]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\artikel\detail.php(10): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\artikel\\detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/detail', [], true)
+ 5 APPPATH\Controllers\Artikel.php(53): view('artikel/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->view('artikel-kedua')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-20 17:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 18:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 18:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-20 18:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

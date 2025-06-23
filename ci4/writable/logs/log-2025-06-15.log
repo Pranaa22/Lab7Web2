@@ -1,0 +1,482 @@
+CRITICAL - 2025-06-15 01:45:53 --> ErrorException: Declaration of App\Cells\ArtikelTerkini::render($kategori = null) must be compatible with CodeIgniter\View\Cell::render(string $library, $params = null, int $ttl = 0, ?string $cacheName = null): string
+[Method: GET, Route: artikel]
+in APPPATH\Cells\ArtikelTerkini.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-06-15 02:53:11 --> CodeIgniter\View\Exceptions\ViewException: App\Cells\ArtikelTerkini::render is not a valid method.
+[Method: GET, Route: artikel]
+in SYSTEMPATH\View\Cell.php on line 99.
+ 1 SYSTEMPATH\View\Cell.php(99): CodeIgniter\View\Exceptions\ViewException::forInvalidCellMethod('App\\Cells\\ArtikelTerkini', 'render')
+ 2 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::render', [], 0, 'AppCellsArtikelTerkinirender40cd750bba9870f18aada2478b24840a')
+ 3 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::render')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 8 APPPATH\Controllers\Artikel.php(14): view('artikel/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+ERROR - 2025-06-15 03:14:42 --> mysqli_sql_exception: Illegal parameter data types varchar and row for operation '=' in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Cells\ArtikelTerkini.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(289): App\Cells\ArtikelTerkini->show(Array)
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'show', Array, 'App\\Cells\\Artik...')
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\Artik...', Array, 0, 'AppCellsArtikel...')
+#10 C:\xampp\htdocs\lab11_ci\ci4\app\Views\layout\main.php(28): view_cell('App\\Cells\\Artik...', Array)
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\View\View.php(240): CodeIgniter\View\View->render('layout/main', Array, true)
+#14 C:\xampp\htdocs\lab11_ci\ci4\system\Common.php(1173): CodeIgniter\View\View->render('artikel/index', Array, true)
+#15 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(14): view('artikel/index', Array)
+#16 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#17 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#18 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#19 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#20 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#21 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#22 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#23 {main}
+CRITICAL - 2025-06-15 03:14:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `artikel`
+WHERE `kategori` = :kategori:
+ORDER BY `created_at` DESC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Cells\ArtikelTerkini.php(18): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\View\Cell.php(289): App\Cells\ArtikelTerkini->show([...])
+ 6 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'show', [...], 'App\\Cells\\ArtikelTerkini')
+ 7 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::show', [...], 0, 'AppCellsArtikelTerkinishow49704f545e65f40543c27dcbdb5a5661')
+ 8 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::show', [...])
+ 9 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+10 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+12 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+13 APPPATH\Controllers\Artikel.php(14): view('artikel/index', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+15 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+16 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 03:14:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `artikel`
+WHERE `kategori` = (\'teknologi\',\'umum\')
+ORDER BY `created_at` DESC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `artikel`
+WHERE `kategori` = (\'teknologi\',\'umum\')
+ORDER BY `created_at` DESC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `artikel`
+WHERE `kategori` = :kategori:
+ORDER BY `created_at` DESC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Cells\ArtikelTerkini.php(18): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\View\Cell.php(289): App\Cells\ArtikelTerkini->show([...])
+ 8 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'show', [...], 'App\\Cells\\ArtikelTerkini')
+ 9 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::show', [...], 0, 'AppCellsArtikelTerkinishow49704f545e65f40543c27dcbdb5a5661')
+10 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::show', [...])
+11 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+12 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+13 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+14 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+15 APPPATH\Controllers\Artikel.php(14): view('artikel/index', [...])
+16 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+17 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+18 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+22 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 03:14:42 --> [Caused by] mysqli_sql_exception: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `artikel`
+WHERE `kategori` = (\'teknologi\',\'umum\')
+ORDER BY `created_at` DESC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `artikel`
+WHERE `kategori` = (\'teknologi\',\'umum\')
+ORDER BY `created_at` DESC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `artikel`
+WHERE `kategori` = (\'teknologi\',\'umum\')
+ORDER BY `created_at` DESC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `artikel`
+WHERE `kategori` = :kategori:
+ORDER BY `created_at` DESC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Cells\ArtikelTerkini.php(18): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\View\Cell.php(289): App\Cells\ArtikelTerkini->show([...])
+ 9 SYSTEMPATH\View\Cell.php(104): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Cells\ArtikelTerkini), 'show', [...], 'App\\Cells\\ArtikelTerkini')
+10 SYSTEMPATH\Common.php(1189): CodeIgniter\View\Cell->render('App\\Cells\\ArtikelTerkini::show', [...], 0, 'AppCellsArtikelTerkinishow49704f545e65f40543c27dcbdb5a5661')
+11 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::show', [...])
+12 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+13 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+14 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+15 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+16 APPPATH\Controllers\Artikel.php(14): view('artikel/index', [...])
+17 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+18 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+19 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+23 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 03:15:29 --> TypeError: view_cell(): Argument #3 ($ttl) must be of type int, array given, called in C:\xampp\htdocs\lab11_ci\ci4\app\Views\layout\main.php on line 28
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Common.php on line 1186.
+ 1 APPPATH\Views\layout\main.php(28): view_cell('App\\Cells\\ArtikelTerkini::show', [...], [...])
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\lab11_ci\\ci4\\app\\Views\\layout\\main.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/main', [], true)
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('artikel/index', [], true)
+ 6 APPPATH\Controllers\Artikel.php(14): view('artikel/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-15 04:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 04:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-15 05:45:10 --> Error: Class "Config\App\Filters\Auth" not found
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('Config\\App\\Filters\\Auth')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('admin/artikel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 05:47:30 --> Error: Class "Config\Auth" not found
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('Config\\Auth')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('admin/artikel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 05:47:49 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: admin/artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 07:53:34 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: user/login]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 07:53:43 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 07:53:47 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 07:53:58 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 08:21:29 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+CRITICAL - 2025-06-15 08:21:31 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: about]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-15 08:21:33 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: about]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-15 08:21:59 --> Error: Undefined constant "Config\App"
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Config\Factories.php on line 235.
+ 1 SYSTEMPATH\Config\Factories.php(169): CodeIgniter\Config\Factories::createInstance('config', 'Config\\Filters', [])
+ 2 SYSTEMPATH\Config\Factories.php(188): CodeIgniter\Config\Factories::__callStatic('config', [])
+ 3 SYSTEMPATH\Common.php(210): CodeIgniter\Config\Factories::get('config', 'Config\\Filters')
+ 4 SYSTEMPATH\Config\Services.php(295): config('Config\\Filters')
+ 5 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::filters(null, false)
+ 6 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('filters', [...])
+ 7 SYSTEMPATH\Config\Services.php(292): CodeIgniter\Config\BaseService::getSharedInstance('filters', null)
+ 8 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::filters()
+ 9 SYSTEMPATH\CodeIgniter.php(345): CodeIgniter\Config\BaseService::__callStatic('filters', [])
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-15 08:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 08:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 09:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 11:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 11:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-15 14:34:15 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'lab_ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\User->login()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\User->login()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\lab11_ci\ci4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-06-15 14:34:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: user/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `useremail` = :useremail:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\User.php(29): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab11_ci\\ci4\\public\\index.php')
+DEBUG - 2025-06-15 14:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-15 14:34:40 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'lab_ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\lab11_ci\ci4\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\lab11_ci\ci4\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\lab11_ci\ci4\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\lab11_ci\ci4\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\lab11_ci\ci4\app\Controllers\Artikel.php(13): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#7 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#8 C:\xampp\htdocs\lab11_ci\ci4\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lab11_ci\ci4\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\lab11_ci\ci4\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-06-15 14:34:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `artikel`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Artikel.php(13): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-15 14:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 14:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 16:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-15 16:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
